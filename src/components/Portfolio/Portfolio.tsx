@@ -5,7 +5,6 @@ import "./Portfolio.css";
 interface CardItem {
     title: string;
     gif: string;
-    png: string;
     description: string;
 }
 
