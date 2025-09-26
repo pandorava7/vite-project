@@ -29,6 +29,15 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    border: 2px dashed #999;
+    /* ✅ 灰色虚线边框 */
+    border-radius: 12px;
+    /* 可选：圆角 */
+    padding: 15px;
+    /* 可选：内边距，避免内容贴边 */
+
+    height: 700px;
 }
 
 /* 各分类标题的渐变色 */
@@ -36,14 +45,17 @@
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     color: #ffffff;
 }
+
 .card-list[data-category='Unity'] .category-title {
     background: linear-gradient(90deg, #a18cd1, #fbc2eb);
     color: #2e2e2e;
 }
+
 .card-list[data-category='Video Clip'] .category-title {
     background: linear-gradient(90deg, #ff9966, #ff5e62);
     color: #ffffff;
 }
+
 .card-list[data-category='Music'] .category-title {
     background: linear-gradient(90deg, #36d1dc, #5b86e5);
     color: #ffffff;
@@ -60,20 +72,24 @@
 
 /* 左边主要展示卡片 */
 .main-card {
-    flex: 0 0 70%;
+    flex: 70%;
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.main-card .video {
-    width: 100%;
-    height: 400px;  /* 大展示区更高 */
+    margin-top: 5px;
 }
 
 .main-card h2 {
     font-size: 22px;
     margin: 5px 0;
+}
+
+.main-card .description-card {
+    max-height: 120px;
+    /* 或者 height: 150px */
+    overflow-y: auto;
+    padding-right: 5px;
+    /* 避免文字贴边滚动条 */
 }
 
 .main-card .description {
@@ -84,12 +100,20 @@
 
 /* 右边侧边列表 */
 .side-list {
-    flex: 0 0 30%;
+    flex: 30%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: auto;
+    background-color: rgba(195, 139, 187, 0.5);
+    border-radius: 15px;
+    border: 2px black dashed;
+}
+
+.side-list::-webkit-scrollbar {
+    display: none;
+    /* Chrome、Safari */
 }
 
 .side-card {
@@ -98,20 +122,31 @@
     cursor: pointer;
     border-radius: 8px;
     padding: 5px;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-.side-card:hover {
-    background: rgba(0, 0, 0, 0.05);
+.side-card.active .video::after {
+    content: "Current Content";
+    position: absolute;
+    inset: 0;
+    background: rgba(128, 128, 128, 0.4);
+    /* 半透明灰色 */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* x偏移 y偏移 模糊 半透明黑 */
 }
 
-.side-card.active {
-    border: 2px solid #0072ff;
+.side-card.active .video {
+    box-shadow: 0 0 5px black;
 }
 
-.side-card .video {
-    width: 100%;
-    height: 100px;
+.side-card h3 {
+    text-align: center;
 }
 
 /* ======================
@@ -119,7 +154,9 @@
 ====================== */
 .video {
     width: 100%;
-    height: 160px; /* ⚠️ 在 main-card 会被覆盖成 400px */
+    aspect-ratio: 16 / 9;
+    height: auto;
+    width: 100%;
     position: relative;
     border-radius: 12px;
     transition: all ease-out 0.1s;
@@ -134,11 +171,11 @@
     border-radius: 12px;
     background: linear-gradient(270deg, #00c6ff, #0072ff, #a020f0, #ff6f61);
     background-size: 400% 400%;
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    mask-composite: exclude;
     opacity: 0;
     transition: opacity 0.1s ease-out;
 }
@@ -150,12 +187,20 @@
 }
 
 @keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.video video {
+.video img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -168,7 +213,8 @@
    旧版卡片 (已弃用横向滚动)
 ====================== */
 .cards {
-    display: none; /* ⚠️ 旧版横向滚动弃用 */
+    display: none;
+    /* ⚠️ 旧版横向滚动弃用 */
 }
 
 .card {
@@ -186,6 +232,7 @@
     text-align: left;
     cursor: pointer;
 }
+
 .card h2:hover {
     text-decoration: underline;
 }
