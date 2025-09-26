@@ -1,0 +1,113 @@
+.tooltip-container {
+  display: inline-flex;
+  position: relative;
+}
+
+/* 基础样式 */
+.tooltip {
+  width: fit-content;
+  max-width: 500px;   /* 限制最大宽度 */
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d8e2e2;
+  position: absolute;
+  opacity: 0;
+  z-index: 200;
+  white-space: nowrap;
+  
+  pointer-events: none;
+  
+  transition: all 0.3s ease;
+}
+
+.tooltip.open{
+  opacity: 1;
+}
+
+/* 箭头基础样式 */
+.arrow {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* ===== top ===== */
+.tooltip.top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.tooltip.top.open {
+  transform: translateX(-50%) translateY(-20px);
+}
+
+.arrow.top {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fff;
+  top: 100%;
+  left: calc(50% - 8px);
+}
+
+/* ===== bottom ===== */
+.tooltip.bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+}
+
+.tooltip.bottom.open {
+  transform: translateX(-50%) translateY(20px);
+}
+
+.arrow.bottom {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  bottom: 100%;
+  left: calc(50% - 8px);
+}
+
+/* ===== left ===== */
+.tooltip.left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px);
+}
+
+.tooltip.left.open {
+  transform: translateY(-50%) translateX(-20px);
+}
+
+.arrow.left {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #fff;
+  left: 100%;
+  top: calc(50% - 8px);
+}
+
+/* ===== right ===== */
+.tooltip.right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+}
+
+.tooltip.right.open {
+  transform: translateY(-50%) translateX(20px);
+}
+
+.arrow.right {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #fff;
+  right: 100%;
+  top: calc(50% - 8px);
+}

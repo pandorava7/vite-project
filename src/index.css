@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-family: "Alan Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  background-image:
+    linear-gradient(180deg, rgba(240, 252, 253, 0.8) 0%, rgba(96, 195, 243, 0.8) 37%, rgba(228, 119, 167, 0.8) 100%),
+    url('./assets/images/background1.jpg');
+
+  background-repeat: no-repeat;
+  /* 不重复 */
+  background-size: cover;
+  /* 按比例放大，覆盖整个屏幕 */
+  background-position: center;
+  /* 居中对齐 */
+  background-attachment: fixed;
+  /* 可选：固定背景，随页面滚动保持不动 */
+}
+
+/* 整体滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  /* 垂直滚动条宽度 */
+  height: 10px;
+  /* 水平滚动条高度 */
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00c6ff, #0072ff);
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+/* 滚动条滑块 hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0072ff, #a020f0);
+}

@@ -1,0 +1,191 @@
+/* ======================
+   通用布局
+====================== */
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    padding-top: 100px;
+}
+
+.category-title {
+    width: fit-content;
+    padding: 5px 20px;
+    font-size: 24px;
+    color: #333;
+    border-radius: 10px;
+    outline: solid 2px white;
+    cursor: pointer;
+    transition: all ease-out 0.1s;
+    align-self: start;
+}
+
+.category-title:hover {
+    outline: solid 2px black;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 各分类标题的渐变色 */
+.card-list[data-category='Website'] .category-title {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #ffffff;
+}
+.card-list[data-category='Unity'] .category-title {
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+    color: #2e2e2e;
+}
+.card-list[data-category='Video Clip'] .category-title {
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    color: #ffffff;
+}
+.card-list[data-category='Music'] .category-title {
+    background: linear-gradient(90deg, #36d1dc, #5b86e5);
+    color: #ffffff;
+}
+
+/* ======================
+   新版布局：左右分栏
+====================== */
+.card-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* 左边主要展示卡片 */
+.main-card {
+    flex: 0 0 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-card .video {
+    width: 100%;
+    height: 400px;  /* 大展示区更高 */
+}
+
+.main-card h2 {
+    font-size: 22px;
+    margin: 5px 0;
+}
+
+.main-card .description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* 右边侧边列表 */
+.side-list {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.side-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 5px;
+    transition: background 0.2s ease;
+}
+
+.side-card:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.side-card.active {
+    border: 2px solid #0072ff;
+}
+
+.side-card .video {
+    width: 100%;
+    height: 100px;
+}
+
+/* ======================
+   视频卡片通用样式
+====================== */
+.video {
+    width: 100%;
+    height: 160px; /* ⚠️ 在 main-card 会被覆盖成 400px */
+    position: relative;
+    border-radius: 12px;
+    transition: all ease-out 0.1s;
+    overflow: hidden;
+}
+
+.video::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 12px;
+    background: linear-gradient(270deg, #00c6ff, #0072ff, #a020f0, #ff6f61);
+    background-size: 400% 400%;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.1s ease-out;
+}
+
+.side-card:hover .video::before,
+.card:hover .video::before {
+    opacity: 1;
+    animation: gradientFlow 3s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all ease-out 0.1s;
+    cursor: pointer;
+}
+
+/* ======================
+   旧版卡片 (已弃用横向滚动)
+====================== */
+.cards {
+    display: none; /* ⚠️ 旧版横向滚动弃用 */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.card h2 {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+}
+.card h2:hover {
+    text-decoration: underline;
+}

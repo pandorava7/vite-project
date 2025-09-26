@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(240, 252, 253, 1) 0%, rgba(96, 195, 243, 1) 37%, rgba(228, 119, 167, 1) 100%);
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(96, 195, 243, 0.8);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  position: relative;
+  /* 让伪元素定位依附于 a */
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 16px;
+  color: #000;
+}
+
+/* 下划线伪元素 */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /* 贴着文字底部 */
+  width: 100%;
+  height: 2px;
+  /* 下划线粗细 */
+  background-color: #000;
+  /* 下划线颜色，可换 */
+  transform: scaleX(0);
+  /* 初始隐藏 */
+  transform-origin: left;
+  /* 从左向右展开 */
+  transition: transform 0.3s ease;
+}
+
+/* Hover 时触发动画 */
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transform: scaleX(1);
+}
