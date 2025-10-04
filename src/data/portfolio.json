@@ -1,0 +1,115 @@
+[
+    {
+        "category": "Website for Fullstack",
+        "items": [
+            {
+                "title": "React + Web API CRUD",
+                "video": [
+                    "/asset/Website/React + Web API CRUD/output.mp4"
+                ],
+                "png": "/asset/Website/React + Web API CRUD/main.png",
+                "description": "一个基于 React 与 ASP.NET 的增删改查示例网站"
+            },
+            {
+                "title": "Job Recruitment",
+                "video": [
+                    "/asset/Website/Job Recruitment System/output.mp4"
+                ],
+                "png": "/asset/Website/Job Recruitment System/main.png",
+                "description": "招聘系统，支持职位发布和申请管理"
+            },
+            {
+                "title": "Online Shopping",
+                "video": [
+                    "/asset/Website/Online Shopping/output.mp4"
+                ],
+                "png": "/asset/Website/Online Shopping/main.png",
+                "description": "电子商务平台，含购物车与支付功能"
+            },
+            {
+                "title": "Personal Website",
+                "video": [
+                    "/asset/Website/Personal Website/output.mp4"
+                ],
+                "png": "/asset/Website/Personal Website/main.png",
+                "description": "展示个人简历与作品集的网站"
+            }
+        ],
+        "tooltip": "Project of website"
+    },
+    {
+        "category": "Unity / Game Development",
+        "items": [
+            {
+                "title": "DreamCho",
+                "video": [
+                    "/asset/Unity/DreamCho/output1.mp4",
+                    "/asset/Unity/DreamCho/output2.mp4"
+                ],
+                "png": "/asset/Unity/DreamCho/main.png",
+                "description": "梦境主题的探索游戏 Demo"
+            },
+            {
+                "title": "Inventory System",
+                "video": [
+                    "/asset/Unity/Inventory System/output.mp4"
+                ],
+                "png": "/asset/Unity/Inventory System/main.png",
+                "description": "Unity 内置的背包物品管理系统"
+            },
+            {
+                "title": "可奈の奇妙な冒険",
+                "video": [
+                    "/asset/Unity/可奈の奇妙な冒険/output.mp4"
+                ],
+                "png": "/asset/Unity/可奈の奇妙な冒険/main.png",
+                "description": "日系风格的冒险解谜游戏"
+            },
+            {
+                "title": "Chaos of Tuyuan",
+                "video": [
+                    "/asset/Unity/Chaos of Tuyuan/output.mp4"
+                ],
+                "png": "/asset/Unity/Chaos of Tuyuan/main.png",
+                "description": "幻想题材的角色扮演游戏 Demo"
+            },
+            {
+                "title": "First Demo",
+                "video": [
+                    "/asset/Unity/First Demo/output.mp4"
+                ],
+                "png": "/asset/Unity/First Demo/main.png",
+                "description": "第一个 Unity 项目练习 Demo"
+            }
+        ],
+        "tooltip": "Project of game development"
+    },
+    {
+        "category": "Video Clip",
+        "items": [
+            {
+                "title": "AMV",
+                "video": [
+                    "/asset/VideoClip/AMV/output.mp4"
+                ],
+                "png": "/asset/VideoClip/AMV/main.png",
+                "description": "使用动画片段制作的音乐视频"
+            }
+        ],
+        "tooltip": "hobby for video clip"
+    },
+    {
+        "category": "Music",
+        "items": [
+            {
+                "title": "Vernal Reverie",
+                "video": [
+                    "/asset/Music/Vernal Reverie/output.mp4"
+                ],
+                "png": "/asset/Music/Vernal Reverie/main.png",
+                "description": "原创音乐作品，梦幻风格"
+            }
+        ],
+        "tooltip": "hobby for music creative"
+    }
+]

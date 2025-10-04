@@ -1,117 +1,188 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tooltip from "../Tooltip/Tooltip";
 import "./Portfolio.css";
+import data from '../../data/portfolio.json'
 
 interface CardItem {
     title: string;
-    gif: string;
-    description: string;
+    video?: string[];
+    png?: string;
+    description?: string;
 }
 
-interface CardList {
-    category: string;
-    items: CardItem[];
-    tooltip: string;
-}
+// interface CardList {
+//     category: string;
+//     items: CardItem[];
+//     tooltip: string;
+// }
 
-const data: CardList[] = [
-    {
-        category: "Website",
-        items: [
-            { title: "React + ASP CRUD", gif: "/videos/website.mp4", description: "一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站一个基于 React 与 ASP.NET 的增删改查示例网站" },
-            { title: "Job Recruitment", gif: "/gif/Website/Job Recruitment System/main.gif", description: "招聘系统，支持职位发布和申请管理" },
-            { title: "Online Shopping", gif: "/videos/website.mp4", description: "电子商务平台，含购物车与支付功能" },
-            { title: "Personal Website", gif: "/videos/website.mp4", description: "展示个人简历与作品集的网站" },
-        ],
-        tooltip: "Project of website"
-    },
-    {
-        category: "Unity",
-        items: [
-            { title: "DreamCho", gif: "/videos/unity.mp4", description: "梦境主题的探索游戏 Demo" },
-            { title: "Inventory System", gif: "/videos/website.mp4", description: "Unity 内置的背包物品管理系统" },
-            { title: "可奈の不思議な冒険", gif: "/videos/unity.mp4", description: "日系风格的冒险解谜游戏" },
-            { title: "Chaos of Tuyuan", gif: "/videos/unity.mp4", description: "幻想题材的角色扮演游戏 Demo" },
-            { title: "First Demo", gif: "/videos/unity.mp4", description: "第一个 Unity 项目练习 Demo" },
-        ],
-        tooltip: "Project of game development"
-    },
-    {
-        category: "Video Clip",
-        items: [
-            { title: "AMV", gif: "/videos/videoclip.mp4", description: "使用动画片段制作的音乐视频" },
-        ],
-        tooltip: "hobby for video clip"
-    },
-    {
-        category: "Music",
-        items: [
-            { title: "Vernal Reverie", gif: "/videos/music.mp4", description: "原创音乐作品，梦幻风格" },
-        ],
-        tooltip: "hobby for music creative"
-    },
-];
 
 const Portfolio = () => {
-    // 初始化时，每个 category 默认选中第一个 item
+    // 每个 category 默认选中第一个 item
     const initialSelected: Record<string, CardItem> = {};
-    data.forEach(list => {
+    data.forEach((list) => {
         initialSelected[list.category] = list.items[0];
     });
 
     const [selectedCards, setSelectedCards] = useState<Record<string, CardItem>>(initialSelected);
 
     const handleSelect = (category: string, item: CardItem) => {
-        setSelectedCards(prev => ({
+        setSelectedCards((prev) => ({
             ...prev,
-            [category]: item
+            [category]: item,
         }));
     };
+
+    const [videoIndex, setVideoIndex] = useState(0);
+
+    // 控制展开/折叠
+    const initialExpanded: Record<string, boolean> = {};
+    data.forEach((list) => {
+        initialExpanded[list.category] = list.category === "Website for Fullstack"; // 默认只有 Website 展开
+    });
+    const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>(initialExpanded);
+
+    // 可见状态（真正挂载/卸载用）
+    const [visibleCategories, setVisibleCategories] = useState<Record<string, boolean>>(initialExpanded);
+
+    const toggleCategory = (category: string) => {
+        if (expandedCategories[category]) {
+            // 正在展开 → 要折叠
+            setExpandedCategories((prev) => ({ ...prev, [category]: false }));
+            setTimeout(() => {
+                setVisibleCategories((prev) => ({ ...prev, [category]: false }));
+            }, 200); // 0.2 秒后再卸载
+        } else {
+            // 正在折叠 → 要展开
+            setVisibleCategories((prev) => ({ ...prev, [category]: true }));
+            setTimeout(() => {
+                setExpandedCategories((prev) => ({ ...prev, [category]: true }));
+            }, 10); // 微小延迟，保证动画能触发
+        }
+    };
+
+
 
     return (
         <section id="portfolio" className="portfolio">
             {data.map((list) => {
                 const currentCard = selectedCards[list.category];
+                const isExpanded = expandedCategories[list.category];
+                const isVisible = visibleCategories[list.category];
+
+                // 监听展开变化
+                useEffect(() => {
+                    if (isExpanded) {
+                        const el = document.getElementById(`card-${list.category}`);
+                        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                }, [isExpanded, list.category]);  // 依赖 isExpanded 和 category
+
                 return (
-                    <div key={list.category} className="card-list" data-category={list.category}>
-                        <div className="category-title">
+                    <div
+                        key={list.category}
+                        id={`card-${list.category}`}   // 用 category 做唯一 id
+                        className={`card-list ${isExpanded ? "expanded" : "collapsed"}`}
+                        data-category={list.category}
+                    >
+                        <div
+                            className="category-title"
+                            onClick={() => {
+                                toggleCategory(list.category);
+                            }}
+                            style={{ cursor: "pointer" }}
+                        >
                             <Tooltip position="right" infoText={list.tooltip}>
                                 <p>{list.category}</p>
                             </Tooltip>
                         </div>
 
-                        <div className="card-layout">
-                            {/* 左边主要展示区 */}
-                            <div className="main-card">
-                                <div className="video">
-                                    <img src={currentCard.gif} />
+                        {
+                            !isExpanded && (
+                                <div className="collapse-message">
+                                    <p>↑ Only click if you are interested</p>
                                 </div>
-                                <div className="description-card">
-                                    <h2>{currentCard.title}</h2>
-                                    <p className="description">{currentCard.description}</p>
-                                </div>
-                            </div>
+                            )
+                        }
 
-                            {/* 右边列表 */}
-                            <div className="side-list">
-                                {list.items.map((item, idx) => (
-                                    <div
-                                        key={idx}
-                                        className={`side-card ${currentCard.title === item.title ? "active" : ""}`}
-                                        onClick={() => handleSelect(list.category, item)}
-                                    >
+                        {
+                            isVisible && (
+                                <div className="card-layout">
+                                    {/* 左边主要展示区 */}
+                                    <div className="main-card">
                                         <div className="video">
-                                            <video src={item.gif} loop muted playsInline />
+                                            {/* 左按钮 */}
+                                            {currentCard.video && currentCard.video.length > 1 && (
+                                                <button
+                                                    className="video-nav left"
+                                                    onClick={() =>
+                                                        setVideoIndex((prev) =>
+                                                            prev > 0 ? prev - 1 : currentCard.video!.length - 1
+                                                        )
+                                                    }
+                                                >
+                                                    ⇦
+                                                </button>
+                                            )}
+
+                                            {/* 视频滑动区 */}
+                                            <div
+                                                className="video-track"
+                                                style={{ transform: `translateX(-${videoIndex * 100}%)` }}
+                                            >
+                                                {currentCard.video?.map((src, idx) => (
+                                                    <div className="video-slide" key={idx}>
+                                                        <video src={src} autoPlay muted playsInline loop />
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            {/* 右按钮 */}
+                                            {currentCard.video && currentCard.video.length > 1 && (
+                                                <button
+                                                    className="video-nav right"
+                                                    onClick={() =>
+                                                        setVideoIndex((prev) =>
+                                                            prev < currentCard.video!.length - 1 ? prev + 1 : 0
+                                                        )
+                                                    }
+                                                >
+                                                    ⇨
+                                                </button>
+                                            )}
                                         </div>
-                                        <h3>{item.title}</h3>
+
+                                        <div className="description-card">
+                                            <h2>{currentCard.title}</h2>
+                                            <p className="description">{currentCard.description}</p>
+                                        </div>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
+
+                                    {/* 右边列表 */}
+                                    <div className="side-list">
+                                        {list.items.map((item, idx) => (
+                                            <div
+                                                key={idx}
+                                                className={`side-card ${currentCard.title === item.title ? "active" : ""}`}
+                                                onClick={() => {
+                                                    handleSelect(list.category, item);
+                                                    setVideoIndex(0);
+                                                }}
+                                            >
+                                                <div className="video">
+                                                    <img src={item.png} />
+                                                </div>
+                                                <h3>{item.title}</h3>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )
+                        }
                     </div>
                 );
             })}
-        </section>
+        </section >
     );
 };
 

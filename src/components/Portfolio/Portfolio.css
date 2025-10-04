@@ -38,15 +38,26 @@
     /* 可选：内边距，避免内容贴边 */
 
     height: 700px;
+
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.card-list.collapsed{
+    height: 150px;
+}
+
+.collapse-message{
+    font-size: 24px;
 }
 
 /* 各分类标题的渐变色 */
-.card-list[data-category='Website'] .category-title {
+.card-list[data-category='Website for Fullstack'] .category-title {
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     color: #ffffff;
 }
 
-.card-list[data-category='Unity'] .category-title {
+.card-list[data-category='Unity / Game Development'] .category-title {
     background: linear-gradient(90deg, #a18cd1, #fbc2eb);
     color: #2e2e2e;
 }
@@ -96,6 +107,53 @@
     font-size: 16px;
     color: #555;
     line-height: 1.5;
+}
+
+/* main-card 里的视频容器：横向排列 */
+.main-card .video {
+  position: relative;
+  display: flex;
+  overflow: hidden;  /* 防止溢出 */
+}
+
+/* 包裹所有 video 的滑动区 */
+.video-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; /* 宽度由子元素撑开 */
+}
+
+/* 每个视频占满容器 */
+.video-slide {
+  min-width: 100%;   /* 关键：一屏一个视频 */
+  flex-shrink: 0;
+}
+
+/* 左右切换按钮 */
+.video-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.video-nav.left {
+  left: 10px;
+}
+
+.video-nav.right {
+  right: 10px;
+}
+
+.video-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* 右边侧边列表 */
@@ -200,7 +258,7 @@
     }
 }
 
-.video img {
+.video img, video {
     width: 100%;
     height: 100%;
     object-fit: cover;
