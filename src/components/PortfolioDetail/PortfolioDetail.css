@@ -9,7 +9,7 @@
 
 /* ===== Header ===== */
 .pd-header {
-  text-align: center;
+  text-align: start;
   margin-bottom: 60px;
 }
 
@@ -20,8 +20,9 @@
 
 .pd-header .pd-desc {
   font-size: 1.1rem;
-  color: #666;
+  color: #333;
   margin-bottom: 20px;
+    white-space: pre-line;
 }
 
 .pd-cover {
@@ -57,7 +58,7 @@
   position: relative;
 }
 
-.pd-section h2::after {
+/* .pd-section h2::after {
   content: "";
   display: block;
   width: 100%;
@@ -65,6 +66,25 @@
   background: linear-gradient(90deg, #2db2ff, #ff77cc);
   margin-top: 6px;
   border-radius: 2px;
+} */
+
+/* 下划线伪元素 */
+.pd-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /* 贴着文字底部 */
+  width: 100%;
+  height: 3px;
+  /* 下划线粗细 */
+  background: linear-gradient(90deg, #2db2ff, #ff77cc);
+  /* 下划线颜色，可换 */
+  transform: scaleX(0);
+  /* 初始隐藏 */
+  transform-origin: left;
+  /* 从左向右展开 */
+  transition: transform 0.3s ease;
 }
 
 .pd-section-content > *:not(:last-child) {

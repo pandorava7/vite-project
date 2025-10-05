@@ -162,15 +162,15 @@ const Portfolio = () => {
 
                                         <div className="description-card">
                                             <VStack gap={10}>
-                                                <HStack gap={30}>
-                                                    <h2>{currentCard.title}</h2>
-                                                    <div className="button" onClick={() =>
-                                                        portfolioInfo(currentCard.id)
-                                                    }>View Detail</div>
-                                                </HStack>
+                                                <h2>{currentCard.title}</h2>
                                                 <p className="description">{currentCard.description}</p>
                                             </VStack>
                                         </div>
+
+                                        <div className="button" onClick={() =>
+                                            portfolioInfo(currentCard.id)
+                                        }>View Detail</div>
+
                                     </div>
 
                                     {/* 右边列表 */}

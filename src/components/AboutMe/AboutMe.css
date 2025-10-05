@@ -1,7 +1,7 @@
 .about-container {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 100px 20px;
   font-family: "Segoe UI", "PingFang SC", sans-serif;
   color: #222;
   line-height: 1.8;
@@ -10,14 +10,83 @@
 /* ===== Header ===== */
 .about-header {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 40px;
   margin-bottom: 80px;
 }
 
+/* 容器对齐 */
+.about-card {
+  height: 100%;
+}
+
+/* 图标行 */
+.contact-icons {
+  width: 100%;
+  margin-top: 14px;
+  gap: 12px;            /* 你的 HStack 组件应支持 gap；若不支持可改用 .contact-icons a { margin-right } */
+  flex-wrap: wrap;
+}
+
+/* 单个图标外观 */
+.contact-icons .icon {
+  --bg: rgba(0,0,0,0.06);
+  --fg: #222;
+  --ring: rgba(0,0,0,0.12);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--fg);
+  text-decoration: none;
+  box-shadow: 0 1px 2px var(--ring) inset;
+  transition: all 160ms ease;
+  outline: none;
+}
+
+.contact-icons .icon svg {
+  height: 20px;
+  fill: currentColor; /* 让图标跟随文字颜色 */
+}
+
+/* 悬停/聚焦反馈 */
+.contact-icons .icon:hover,
+.contact-icons .icon:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* 针对不同品牌轻微着色（可按需调整/删除） */
+.contact-icons .icon.email:hover { background: #ffe9e9; color: #c02; }
+.contact-icons .icon.github:hover { background: #eee; color: #000; }
+.contact-icons .icon.itch:hover { background: #ffe7ee; color: #fa5c7c; }
+.contact-icons .icon.youtube:hover { background: #ffeae8; color: #ff0000; }
+.contact-icons .icon.bilibili:hover { background: #e8f6ff; color: #00a1d6; }
+
+/* 深色模式适配（如无暗色可忽略） */
+@media (prefers-color-scheme: dark) {
+  .contact-icons .icon {
+    --bg: rgba(255,255,255,0.08);
+    --fg: #f1f1f1;
+    --ring: rgba(0,0,0,0.3);
+  }
+  /* .contact-icons .icon.github:hover { background: rgba(255,255,255,0.16); color: #fff; } */
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  .contact-icons .icon {
+    transition: none;
+  }
+}
+
+
 .about-avatar {
   width: 180px;
   height: 180px;
+  margin-top: 20px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
@@ -41,6 +110,7 @@
 .about-summary {
   font-size: 1.05rem;
   color: #444;
+  white-space: pre-line;
 }
 
 /* ===== Section ===== */

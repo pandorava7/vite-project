@@ -21,22 +21,22 @@
     padding: 15px;
     /* 可选：内边距，避免内容贴边 */
 
-    height: 700px;
+    height:830px;
 
     transition: all 0.2s ease;
     overflow: hidden;
 }
 
-.card-list.collapsed{
+.card-list.collapsed {
     height: 150px;
 }
 
-.collapse-message{
+.collapse-message {
     font-size: 24px;
 }
 
 /* 各分类标题的渐变色 */
-.card-list[data-category='Website for Fullstack'] .button{
+.card-list[data-category='Website for Fullstack'] .button {
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     color: #ffffff;
 }
@@ -80,64 +80,73 @@
 }
 
 .main-card .description-card {
-    max-height: 120px;
-    /* 或者 height: 150px */
-    overflow-y: auto;
-    padding: 20px 0;
-    /* 避免文字贴边滚动条 */
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 0px 30px;
+
+  direction: rtl;       /* 👈 改变滚动条方向 */
+  text-align: left;     /* 👈 把文字重新对齐回左侧 */
 }
 
 .main-card .description {
     font-size: 16px;
     color: #555;
     line-height: 1.5;
+    white-space: pre-line;
+}
+
+.description-card * {
+  direction: ltr;
 }
 
 /* main-card 里的视频容器：横向排列 */
 .main-card .video {
-  position: relative;
-  display: flex;
-  overflow: hidden;  /* 防止溢出 */
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    /* 防止溢出 */
 }
 
 /* 包裹所有 video 的滑动区 */
 .video-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 100%; /* 宽度由子元素撑开 */
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    /* 宽度由子元素撑开 */
 }
 
 /* 每个视频占满容器 */
 .video-slide {
-  min-width: 100%;   /* 关键：一屏一个视频 */
-  flex-shrink: 0;
+    min-width: 100%;
+    /* 关键：一屏一个视频 */
+    flex-shrink: 0;
 }
 
 /* 左右切换按钮 */
 .video-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 28px;
-  padding: 5px 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 28px;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
 }
 
 .video-nav.left {
-  left: 10px;
+    left: 10px;
 }
 
 .video-nav.right {
-  right: 10px;
+    right: 10px;
 }
 
 .video-nav:hover {
-  background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /* 右边侧边列表 */
@@ -146,12 +155,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 600px;
+    height: 730px;
     overflow-y: auto;
     background-color: rgba(195, 139, 187, 0.5);
     border-radius: 15px;
     border: 2px black dashed;
-  -webkit-overflow-scrolling: touch; /* iOS 惯性滚动 */
+    -webkit-overflow-scrolling: touch;
+    /* iOS 惯性滚动 */
 }
 
 .side-list::-webkit-scrollbar {
@@ -242,7 +252,8 @@
     }
 }
 
-.video img, video {
+.video img,
+video {
     width: 100%;
     height: 100%;
     object-fit: cover;
