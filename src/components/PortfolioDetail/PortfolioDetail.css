@@ -40,6 +40,11 @@
   margin-bottom: 40px;
 }
 
+.pd-link{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /* ===== Section ===== */
 .pd-section {
   margin-bottom: 60px;
@@ -98,12 +103,39 @@
 
 /* 列表 */
 .pd-list {
-  padding-left: 24px;
+  display: flex;                /* 横向排列 */
+  flex-wrap: wrap;              /* 如果太长会自动换行 */
+  gap: 12px;                    /* 元素间距 */
+  list-style: none;             /* 去掉默认的点 */
+  padding: 0;
+  margin: 0;
+  justify-content: flex-start;  /* 居左，可改 center/right */
 }
 
-.pd-list li {
-  margin-bottom: 8px;
+.pd-item {
+  padding: 10px 18px;
+  border: 2px solid #60c3f3;    /* 边框颜色可改 */
+  border-radius: 12px;          /* 圆角 */
+  background-color: #f8fbff;    /* 背景淡色 */
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
+
+/* hover 效果 */
+.pd-item:hover {
+  background-color: #60c3f3;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(96, 195, 243, 0.3);
+}
+
+/* active 点击压下去的感觉 */
+.pd-item:active {
+  transform: scale(0.97);
+}
+
 
 /* 左右分栏 */
 .pd-media-split {

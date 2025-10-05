@@ -47,7 +47,7 @@ const PortfolioDetail = () => {
                 return (
                     <ul key={idx} className="pd-list">
                         {block.items.map((item: string, j: number) => (
-                            <li key={j}>{item}</li>
+                            <li key={j} className="pd-item select-none">{item}</li>
                         ))}
                     </ul>
                 );
@@ -99,7 +99,7 @@ const PortfolioDetail = () => {
                         muted
                     />
                 )}
-                {projectFull.link && <p>Link: <a href={projectFull.link} target="_blank">{projectFull.link}</a></p>}
+                {projectFull.link && <p className="pd-link">Link: <a href={projectFull.link} target="_blank">{projectFull.link}</a></p>}
             </header>
 
             {sections.map((sec) => {

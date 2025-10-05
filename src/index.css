@@ -60,3 +60,15 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #0072ff, #a020f0);
 }
+
+/* 无法选中文字 */
+.select-none {
+  user-select: none;
+  /* 禁止选中文字 */
+  -webkit-user-select: none;
+  /* 兼容 Chrome / Safari */
+  -moz-user-select: none;
+  /* 兼容 Firefox */
+  -ms-user-select: none;
+  /* 兼容旧版 Edge */
+}
