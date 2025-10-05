@@ -3,7 +3,7 @@ import Tooltip from "../Tooltip/Tooltip";
 import "./Portfolio.css";
 import data from '../../data/portfolio.json'
 import { useNavigate } from "react-router-dom";
-import { HStack, VStack } from "../Stack/Stack";
+import { VStack } from "../Stack/Stack";
 
 
 interface CardItem {
