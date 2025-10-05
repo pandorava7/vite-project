@@ -115,7 +115,7 @@
 .pd-item {
   padding: 10px 18px;
   border: 2px solid #60c3f3;    /* 边框颜色可改 */
-  border-radius: 12px;          /* 圆角 */
+  border-radius: 50px;          /* 圆角 */
   background-color: #f8fbff;    /* 背景淡色 */
   color: #333;
   font-weight: 500;

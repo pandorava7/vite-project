@@ -3,6 +3,8 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Portfolio from "./components/Portfolio/Portfolio";
 import PortfolioDetail from "./components/PortfolioDetail/PortfolioDetail";
+import AboutMe from "./components/AboutMe/AboutMe";
+import Resume from "./components/Resume/Resume";
 
 const App: React.FC = () => {
 
@@ -21,8 +23,12 @@ const App: React.FC = () => {
                 <section id="portfolio">
                   <Portfolio />
                 </section>
-                <section id="about">…</section>
-                <section id="resume">…</section>
+                <section id="about">
+                  <AboutMe />
+                </section>
+                <section id="resume">
+                  <Resume />
+                </section>
                 <section id="other">…</section>
               </>
             } />

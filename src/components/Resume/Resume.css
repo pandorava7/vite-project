@@ -1,0 +1,100 @@
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  color: #222;
+  line-height: 1.8;
+}
+
+.resume-container h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resume-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* ===== Resume List ===== */
+.resume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resume-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fafafa;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.resume-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.resume-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn.view {
+  background: linear-gradient(90deg, #2db2ff, #57d6ff);
+  color: white;
+}
+
+.btn.download {
+  background: white;
+  border: 1px solid #2db2ff;
+  color: #2db2ff;
+}
+
+.btn.view:hover {
+  box-shadow: 0 4px 12px rgba(45, 178, 255, 0.3);
+}
+
+.btn.download:hover {
+  background: #2db2ff;
+  color: white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .resume-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .resume-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

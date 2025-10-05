@@ -9,22 +9,6 @@
     padding-top: 100px;
 }
 
-.category-title {
-    width: fit-content;
-    padding: 5px 20px;
-    font-size: 24px;
-    color: #333;
-    border-radius: 10px;
-    outline: solid 2px white;
-    cursor: pointer;
-    transition: all ease-out 0.1s;
-    align-self: start;
-}
-
-.category-title:hover {
-    outline: solid 2px black;
-}
-
 .card-list {
     display: flex;
     flex-direction: column;
@@ -52,22 +36,22 @@
 }
 
 /* 各分类标题的渐变色 */
-.card-list[data-category='Website for Fullstack'] .category-title {
+.card-list[data-category='Website for Fullstack'] .button{
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     color: #ffffff;
 }
 
-.card-list[data-category='Unity / Game Development'] .category-title {
+.card-list[data-category='Unity / Game Development'] .button {
     background: linear-gradient(90deg, #a18cd1, #fbc2eb);
-    color: #2e2e2e;
+    color: #ffffff;
 }
 
-.card-list[data-category='Video Clip'] .category-title {
+.card-list[data-category='Video Clip'] .button {
     background: linear-gradient(90deg, #ff9966, #ff5e62);
     color: #ffffff;
 }
 
-.card-list[data-category='Music'] .category-title {
+.card-list[data-category='Music'] .button {
     background: linear-gradient(90deg, #36d1dc, #5b86e5);
     color: #ffffff;
 }
@@ -99,7 +83,7 @@
     max-height: 120px;
     /* 或者 height: 150px */
     overflow-y: auto;
-    padding-right: 5px;
+    padding: 20px 0;
     /* 避免文字贴边滚动条 */
 }
 
@@ -162,7 +146,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 600px;
+    height: 600px;
     overflow-y: auto;
     background-color: rgba(195, 139, 187, 0.5);
     border-radius: 15px;

@@ -3,6 +3,7 @@ import Tooltip from "../Tooltip/Tooltip";
 import "./Portfolio.css";
 import data from '../../data/portfolio.json'
 import { useNavigate } from "react-router-dom";
+import { HStack, VStack } from "../Stack/Stack";
 
 
 interface CardItem {
@@ -90,7 +91,7 @@ const Portfolio = () => {
                         data-category={list.category}
                     >
                         <div
-                            className="category-title"
+                            className="button"
                             onClick={() => {
                                 toggleCategory(list.category);
                             }}
@@ -160,8 +161,15 @@ const Portfolio = () => {
                                         </div>
 
                                         <div className="description-card">
-                                            <h2>{currentCard.title}</h2>
-                                            <p className="description">{currentCard.description}</p>
+                                            <VStack gap={10}>
+                                                <HStack gap={30}>
+                                                    <h2>{currentCard.title}</h2>
+                                                    <div className="button" onClick={() =>
+                                                        portfolioInfo(currentCard.id)
+                                                    }>View Detail</div>
+                                                </HStack>
+                                                <p className="description">{currentCard.description}</p>
+                                            </VStack>
                                         </div>
                                     </div>
 
