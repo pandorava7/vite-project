@@ -1,14 +1,39 @@
+import { useEffect } from "react";
 import { HStack, VStack } from "../Stack/Stack";
 import "./AboutMe.css";
 import { FaGithub, FaYoutube, FaEnvelope } from "react-icons/fa";
 import { SiItchdotio, SiBilibili } from "react-icons/si";
 
 const AboutMe = () => {
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(".about-section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.3, // 当 30% 内容进入视窗时触发
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <div className="about-container">
       {/* ===== Header Section ===== */}
       <header className="about-header">
-        <VStack className="about-card" gap={30}>
+        <VStack className="about-card" gap={20}>
           <img
             className="about-avatar"
             src="/profile/profile.jpg"
@@ -79,29 +104,72 @@ const AboutMe = () => {
           <h1 className="about-name">Loh Qi Sheng</h1>
           <h2 className="about-role">Front-End & Back-End & Game Developer</h2>
           <p className="about-summary">
-            A passionate developer with a strong interest in creative projects, currently focusing on React, ASP.NET Core, Unity (C#), and multimedia development. Nearly three years of self-taught programming experience, with the past year dedicated to both front-end and back-end technologies.
+            Passionate developer focusing on React, ASP.NET Core, and Unity (C#), with nearly three years of self-taught experience.
             <br /><br />
-            Experienced in multiple projects, including a recruitment website demo, a 2D game demo, and a full-stack CRUD project built with React and ASP.NET Core Web API.
-            <br /> <br />
-            Eager to further improve my technical, communication, and teamwork skills in a professional environment.
+            Skilled at leveraging AI tools to improve coding and learning efficiency.
+            Experienced in developing creative projects including a recruitment website, a 2D game, and a full-stack CRUD app.
+            <br /><br />
+            Eager to refine technical, communication, and teamwork skills in a professional environment.
           </p>
         </div>
       </header>
 
       {/* ===== Education ===== */}
       <section className="about-section">
-        <h2>🎓 教育背景</h2>
+        <h2>🎓 Education Background</h2>
         <div className="about-edu">
           <div className="edu-item">
             <h3>Tunku Abdul Rahman University of Management and Technology (TAR UMT)</h3>
-            <p className="edu-major">Diploma in Information Technology (Software Systems Development)</p>
-            <p className="edu-year">2023 – 2025</p>
-            <p className="edu-desc">
-              学习内容涵盖 Web 开发、数据库、操作系统、网络基础及软件开发生命周期。擅长 C#、React 与数据库管理。
+            <p className="edu-major">
+              Diploma in Information Technology
             </p>
+            <p className="edu-year">2024/7 - Now</p>
+            <p className="edu-cgpa">CGPA: 3.4 / 4.0</p>
+
+            <p className="edu-desc">
+              Learning areas include <strong>web development, databases, operating systems, networking fundamentals</strong>, 
+              and the <strong>software development lifecycle</strong>. Proficient in <strong>C#, React, and ASP.NET Core</strong>.
+            </p>
+
+            <div className="edu-courses">
+              <h4>Technical Core 💻</h4>
+              <ul>
+                <li>Software Development Fundamentals <span className="gray">Rating Unknown</span></li>
+                <li>Object-Oriented Programming Techniques <span className="red">A</span></li>
+                <li>Web-Based Integrated Systems <span className="red">A</span></li>
+                <li>Web and Mobile Systems <span className="gray">Rating Unknown</span></li>
+                <li>Operating Systems <span className="gray">Rating Unknown</span></li>
+                <li>Database Development and Applications <span className="orange">B+</span></li>
+              </ul>
+            </div>
+            <div className="edu-courses">
+              <h4>Systems & Networking 🌐</h4>
+              <ul>
+                <li>Fundamentals of Computer Networks <span className="red">A</span></li>
+                <li>Networking Essentials <span className="gray">Rating Unknown</span></li>
+                <li>Computer Architecture <span className="orange">B</span></li>
+              </ul>
+            </div>
+            <div className="edu-courses">
+              <h4>Analytical & Problem Solving 🧩</h4>
+              <ul>
+                <li>Problem Solving and Programming <span className="red">A</span></li>
+                <li>Discrete Mathematics <span className="red">A</span></li>
+                <li>Calculus and Algebra <span className="blue">C</span></li>
+                <li>Probability and Statistics <span className="orange">B+</span></li>
+              </ul>
+            </div>
+            <div className="edu-courses">
+              <h4>Security & Ethics 🔐</h4>
+              <ul>
+                <li>Introduction to Cybersecurity <span className="blue">B-</span></li>
+                <li>Ethics in Computing <span className="gray">Rating Unknown</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* ===== Skills ===== */}
       <section className="about-section">
