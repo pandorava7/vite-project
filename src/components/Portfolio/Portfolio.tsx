@@ -2,20 +2,16 @@ import { useEffect, useState } from "react";
 import Tooltip from "../Tooltip/Tooltip";
 import "./Portfolio.css";
 import data from '../../data/portfolio.json'
+import { useNavigate } from "react-router-dom";
+
 
 interface CardItem {
+    id: string;
     title: string;
     video?: string[];
     png?: string;
     description?: string;
 }
-
-// interface CardList {
-//     category: string;
-//     items: CardItem[];
-//     tooltip: string;
-// }
-
 
 const Portfolio = () => {
     // 每个 category 默认选中第一个 item
@@ -59,6 +55,14 @@ const Portfolio = () => {
                 setExpandedCategories((prev) => ({ ...prev, [category]: true }));
             }, 10); // 微小延迟，保证动画能触发
         }
+    };
+
+    const navigate = useNavigate();
+
+    const portfolioInfo = (id: string) => {
+        navigate(`portfolio/${id}`)
+
+        // console.log("test");
     };
 
 
@@ -132,7 +136,10 @@ const Portfolio = () => {
                                             >
                                                 {currentCard.video?.map((src, idx) => (
                                                     <div className="video-slide" key={idx}>
-                                                        <video src={src} autoPlay muted playsInline loop />
+                                                        <video src={src} autoPlay muted playsInline loop
+                                                            onClick={() =>
+                                                                portfolioInfo(currentCard.id)
+                                                            } />
                                                     </div>
                                                 ))}
                                             </div>

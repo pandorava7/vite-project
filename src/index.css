@@ -23,7 +23,7 @@ body {
 
   background-image:
     linear-gradient(180deg, rgba(240, 252, 253, 0.8) 0%, rgba(96, 195, 243, 0.8) 37%, rgba(228, 119, 167, 0.8) 100%),
-    url('./assets/images/background1.jpg');
+    url('/images/background1.jpg');
 
   background-repeat: no-repeat;
   /* 不重复 */

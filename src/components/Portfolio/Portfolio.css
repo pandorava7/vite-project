@@ -211,7 +211,6 @@
    视频卡片通用样式
 ====================== */
 .video {
-    width: 100%;
     aspect-ratio: 16 / 9;
     height: auto;
     width: 100%;

@@ -6,10 +6,10 @@ const Navbar = () => {
     const [active, setactive] = useState("Portfolio");
 
     const links = [
-        { label: "Portfolio", href: "#portfolio" },
-        { label: "About me", href: "#about" },
-        { label: "Resume", href: "#resume" },
-        { label: "Other", href: "#other" },
+        { label: "Portfolio", href: "/#portfolio" },
+        { label: "About me", href: "/#about" },
+        { label: "Resume", href: "/#resume" },
+        { label: "Other", href: "/#other" },
     ];
 
     return (

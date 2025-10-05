@@ -1,0 +1,157 @@
+.portfolio-detail {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  color: #222;
+  line-height: 1.8;
+}
+
+/* ===== Header ===== */
+.pd-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pd-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.pd-header .pd-desc {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.pd-cover {
+    aspect-ratio: 16 / 9;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pd-top-video {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+/* ===== Section ===== */
+.pd-section {
+  margin-bottom: 60px;
+  padding-top: 40px;
+}
+
+.pd-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.pd-section h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #2db2ff, #ff77cc);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.pd-section-content > *:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+/* ===== Block Types ===== */
+.pd-paragraph {
+  font-size: 1.05rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* 图片 */
+.pd-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.pd-image figcaption {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* 视频 */
+.pd-video video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* 列表 */
+.pd-list {
+  padding-left: 24px;
+}
+
+.pd-list li {
+  margin-bottom: 8px;
+}
+
+/* 左右分栏 */
+.pd-media-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 图片：文字 = 1:2 */
+  gap: 24px;
+}
+
+.pd-media-split.left .pd-media {
+  order: 0;
+}
+
+.pd-media-split.right .pd-media {
+  order: 1;
+}
+
+.pd-media img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pd-media figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 6px;
+}
+
+.pd-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 引言 */
+.pd-quote {
+  border-left: 4px solid #2db2ff;
+  padding-left: 16px;
+  font-style: italic;
+  color: #555;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .pd-media-split {
+    grid-template-columns: 1fr;
+  }
+}

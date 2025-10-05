@@ -1,0 +1,31 @@
+[
+  {
+    "id": "p011",
+    "link": "https://youtu.be/UYIeOTV3z4E?si=wMyqzbl91h9j-uD0",
+    "blocks": [
+      {
+        "section": "overview",
+        "type": "mediaSplit",
+        "side": "left",
+        "image": "/asset/Music/Vernal Reverie/main.png",
+        "caption": "作品封面",
+        "content": "这首曲子灵感来自春天的梦境……"
+      },
+      {
+        "section": "tech",
+        "type": "list",
+        "items": ["FL Studio", "Pianoteq 8", "Ozone 11"]
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "独立完成作曲、编曲、混音与母带。"
+      },
+      {
+        "section": "challenges",
+        "type": "quote",
+        "content": "主要难点在于如何让钢琴音色动态自然且富有呼吸感。"
+      }
+    ]
+  }
+]
