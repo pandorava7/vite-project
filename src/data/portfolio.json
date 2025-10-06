@@ -6,36 +6,36 @@
                 "id": "p001",
                 "title": "React + Web API CRUD (未完成)",
                 "video": [
-                    "/asset/Website/React + Web API CRUD/output.mp4"
+                    "/assets/Website/React + Web API CRUD/output.mp4"
                 ],
-                "png": "/asset/Website/React + Web API CRUD/main.png",
+                "png": "/assets/Website/React + Web API CRUD/main.png",
                 "description": "A sample website based on React and ASP.NET for data CRUD"
             },
             {
                 "id": "p002",
                 "title": "Job Recruitment",
                 "video": [
-                    "/asset/Website/Job Recruitment System/output.mp4"
+                    "/assets/Website/Job Recruitment System/output.mp4"
                 ],
-                "png": "/asset/Website/Job Recruitment System/main.png",
+                "png": "/assets/Website/Job Recruitment System/main.png",
                 "description": "The recruitment website for assignment \n- supports three user roles to log in to the system \n- enabling users to search and apply for jobs \n- post and check job status, review jobs \n- manage the website management system."
             },
             {
                 "id": "p003",
                 "title": "Online Shopping",
                 "video": [
-                    "/asset/Website/Online Shopping/output.mp4"
+                    "/assets/Website/Online Shopping/output.mp4"
                 ],
-                "png": "/asset/Website/Online Shopping/main.png",
+                "png": "/assets/Website/Online Shopping/main.png",
                 "description": "Online Shopping System for assignment. \n- User can search, add item to cart\n- Pay and leave a review to item\n- View orders for order detail\n- Simple Profile Edit\n- Admin can do CRUD"
             },
             {
                 "id": "p004",
                 "title": "Personal Website",
                 "video": [
-                    "/asset/Website/Personal Website/output.mp4"
+                    "/assets/Website/Personal Website/output.mp4"
                 ],
-                "png": "/asset/Website/Personal Website/main.png",
+                "png": "/assets/Website/Personal Website/main.png",
                 "description": "Personal Website made by PHP, only for personal use\n- Diary system\n-- Add, Edit or Delete a diary\n- Text Calculator\n-- Calculate count of word, letter , paragraph, sentences\n-- Filter specific letter\n- Personal feature such as Image, Video archive, Quick links\n- Count Down feature can add, edit or delete a timer\n- Novel module\n-- support add, edit the novel\n-- import txt file\n-- day night mode switching\n- Google translate API support multiple language\n- Weather API"
             }
         ],
@@ -48,46 +48,46 @@
                 "id": "p005",
                 "title": "DreamCho",
                 "video": [
-                    "/asset/Unity/DreamCho/output1.mp4",
-                    "/asset/Unity/DreamCho/output2.mp4"
+                    "/assets/Unity/DreamCho/output1.mp4",
+                    "/assets/Unity/DreamCho/output2.mp4"
                 ],
-                "png": "/asset/Unity/DreamCho/main.png",
+                "png": "/assets/Unity/DreamCho/main.png",
                 "description": "This is currently the longest-running game project (including its predecessor “Chaos of Tuyuan”), containing a large number of early-stage ideas and experiments.\n\nThe name DreamCho comes from the combination of “Dream” and “Echo,” meaning “the cycle of dreams.”\n\nThe project features many carefully crafted animations and artistic effects, with great attention devoted to the design of character control, puzzle mechanics, and enemy skills.\n\nUltimately, the project was discontinued due to real-life issues, but it may be revived in the future."
             },
             {
                 "id": "p006",
                 "title": "Inventory System",
                 "video": [
-                    "/asset/Unity/Inventory System/output.mp4"
+                    "/assets/Unity/Inventory System/output.mp4"
                 ],
-                "png": "/asset/Unity/Inventory System/main.png",
+                "png": "/assets/Unity/Inventory System/main.png",
                 "description": "This is an inventory system plugin developed for another game project. It provides rich inventory features, including but not limited to item stacking, drag-and-drop, and quick placement.\n\nIt mainly serves as a technical showcase, as implementing a drag-and-drop logic that supports extensive expansion can be highly challenging for code scalability."
             },
             {
                 "id": "p007",
                 "title": "可奈の奇妙な冒険",
                 "video": [
-                    "/asset/Unity/可奈の奇妙な冒険/output.mp4"
+                    "/assets/Unity/可奈の奇妙な冒険/output.mp4"
                 ],
-                "png": "/asset/Unity/可奈の奇妙な冒険/main.png",
+                "png": "/assets/Unity/可奈の奇妙な冒険/main.png",
                 "description": "This project was created on a whim. The gameplay revolves around collecting resources, farming, cooking and synthesizing food, completing orders, earning money, and upgrading your cottage. The art style is cute and relaxing, and the playability is quite high.\n\nCurrently, the project is on hold due to real-life reasons, but it may also be revived in the future."
             },
             {
                 "id": "p008",
                 "title": "Chaos of Tuyuan",
                 "video": [
-                    "/asset/Unity/Chaos of Tuyuan/output.mp4"
+                    "/assets/Unity/Chaos of Tuyuan/output.mp4"
                 ],
-                "png": "/asset/Unity/Chaos of Tuyuan/main.png",
-                "description": "This is the predecessor of DreamCho, sharing a similar art style. The gameplay focuses on fighting and leveling up within a single space while gradually uncovering the story’s truth. The game includes a wide variety of assets, enemy types, and weapons—all hand-drawn by me—which required a great deal of time and effort.\n\nThe project was eventually put on hold because the code became too difficult to maintain and I lost confidence in the gameplay."
+                "png": "/assets/Unity/Chaos of Tuyuan/main.png",
+                "description": "This is the predecessor of DreamCho, sharing a similar art style. The gameplay focuses on fighting and leveling up within a single space while gradually uncovering the story’s truth. The game includes a wide variety of assetss, enemy types, and weapons—all hand-drawn by me—which required a great deal of time and effort.\n\nThe project was eventually put on hold because the code became too difficult to maintain and I lost confidence in the gameplay."
             },
             {
                 "id": "p009",
                 "title": "First Demo",
                 "video": [
-                    "/asset/Unity/First Demo/output.mp4"
+                    "/assets/Unity/First Demo/output.mp4"
                 ],
-                "png": "/asset/Unity/First Demo/main.png",
+                "png": "/assets/Unity/First Demo/main.png",
                 "description": "This was my first Unity demo project, which includes basic animations, layered scenes, character skill control, character state management, inventory, personal profile updates, a simple quest system, basic enemies and combat, simple story dialogues, and even admin commands that can modify the game state. Despite its small size, it’s a fully functional mini project."
             }
         ],
@@ -100,9 +100,9 @@
                 "id": "p010",
                 "title": "AMV",
                 "video": [
-                    "/asset/VideoClip/AMV/output.mp4"
+                    "/assets/VideoClip/AMV/output.mp4"
                 ],
-                "png": "/asset/VideoClip/AMV/main.png",
+                "png": "/assets/VideoClip/AMV/main.png",
                 "description": "This is an AMV editing video created purely out of passion. The game is “Honkai Impact 3,” whose story deeply moved me, so I spent a week producing this AMV. It’s included in my portfolio to showcase both my personal interests and potential in video editing.\n\nThis AMV was created in April 2022 during my high school years, when my editing skills were still immature, yet I devoted a great deal of effort and emotion to it."
             }
         ],
@@ -115,9 +115,9 @@
                 "id": "p011",
                 "title": "Vernal Reverie",
                 "video": [
-                    "/asset/Music/Vernal Reverie/output.mp4"
+                    "/assets/Music/Vernal Reverie/output.mp4"
                 ],
-                "png": "/asset/Music/Vernal Reverie/main.png",
+                "png": "/assets/Music/Vernal Reverie/main.png",
                 "description": "This is a project for my university's Cocu course. We composed a piece of music themed around spring, featuring a beautiful and gentle melody."
             }
         ],

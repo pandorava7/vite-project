@@ -1,5 +1,49 @@
 [
   {
+    "id": "p002",
+    "link": "",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "section": "overview",
+        "content": "本系统旨在协助求职者与雇主之间的招聘匹配，采用 ASP.NET Core MVC 架构。"
+      },
+      {
+        "type": "image",
+        "section": "overview",
+        "src": "/assets/Website/Job Recruitment System/main.png",
+        "caption": "系统首页界面"
+      },
+      {
+        "type": "video",
+        "section": "overview",
+        "src": "/assets/Website/Job Recruitment System/output.mp4"
+      },
+      {
+        "type": "list",
+        "section": "tech",
+        "items": [
+          "ASP.NET Core MVC",
+          "Entity Framework Core",
+          "SQL Server",
+          "Bootstrap + Custom CSS"
+        ]
+      },
+      {
+        "type": "mediaSplit",
+        "section": "contribution",
+        "side": "left",
+        "image": "/assets/Website/Job Recruitment System/main.png",
+        "content": "我负责编写 Job Review 模块，包括审核状态流转与日志记录。"
+      },
+      {
+        "type": "quote",
+        "section": "challenges",
+        "content": "在多角色认证下维护统一登录逻辑是系统设计中的关键难点。"
+      }
+    ]
+  },
+  {
     "id": "p011",
     "link": "https://youtu.be/UYIeOTV3z4E?si=wMyqzbl91h9j-uD0",
     "blocks": [
@@ -14,7 +58,11 @@
       {
         "section": "tech",
         "type": "list",
-        "items": ["FL Studio", "Pianoteq 8", "Ozone 11"]
+        "items": [
+          "FL Studio",
+          "Pianoteq 8",
+          "Ozone 11"
+        ]
       },
       {
         "section": "contribution",

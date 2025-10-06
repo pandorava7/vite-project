@@ -12,7 +12,15 @@ const PortfolioDetail = () => {
     const projectDetail = detailData.find((p) => p.id === id);
 
     // 合并两个来源
-    const projectFull = { ...projectBase, ...projectDetail };
+    const projectFull: {
+        id?: string;
+        title?: string;
+        video?: string[];
+        png?: string;
+        description?: string;
+        link?: string;
+        blocks?: any[];
+    } = { ...projectBase, ...projectDetail };
 
     if (!projectFull) return <p>项目不存在或数据未加载。</p>;
 
