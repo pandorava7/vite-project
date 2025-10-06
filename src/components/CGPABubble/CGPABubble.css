@@ -1,0 +1,63 @@
+/* ===== 简洁水位球样式 ===== */
+.cgpa-bubble {
+  --size: 140px;
+  --fill: 85%;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e9f2ff;
+  box-shadow:
+    inset 0 4px 10px rgba(255, 255, 255, 0.8),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.1),
+    0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* 水位区域 */
+.water {
+  position: absolute;
+  bottom: 0;
+  height: var(--fill);
+  width: 100%;
+  background: linear-gradient(180deg, #7fc7ff, #de4a9b);
+  transition: height 0.8s ease;
+  border-top: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* 水面平线 */
+.water-line {
+  position: absolute;
+  bottom: var(--fill);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* 数值与标题 */
+.cgpa-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column; /* 垂直排列 CGPA 与分数 */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #1a2b4c;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.cgpa-label {
+  font-size: calc(var(--size) * 0.16);
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.cgpa-value {
+  font-size: calc(var(--size) * 0.15);
+  font-weight: 700;
+  margin: 0;
+}

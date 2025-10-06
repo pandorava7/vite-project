@@ -20,10 +20,9 @@ const Resume = () => {
 
   return (
     <div className="resume-container">
-      <h1>📄 My Resume</h1>
+      <h1 className="black">My Resume</h1>
       <p className="resume-intro">
-        以下是我不同版本的简历，可直接在线预览或下载。  
-        （所有文件均储存在 <code>/public/resumes/</code> 文件夹中）
+        Here are different versions of my resume
       </p>
 
       <div className="resume-list">

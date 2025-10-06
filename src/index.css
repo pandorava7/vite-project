@@ -117,3 +117,18 @@ body {
   color:gray;
 }
 
+.grey{
+  color:grey;
+}
+
+.black{
+  color:black;
+}
+
+h1, h2 {
+  color: #de4a9b;
+}
+
+p{
+  font-size: 1.2rem;
+}

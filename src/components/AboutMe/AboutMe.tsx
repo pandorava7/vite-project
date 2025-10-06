@@ -3,6 +3,7 @@ import { HStack, VStack } from "../Stack/Stack";
 import "./AboutMe.css";
 import { FaGithub, FaYoutube, FaEnvelope } from "react-icons/fa";
 import { SiItchdotio, SiBilibili } from "react-icons/si";
+import CGPABubble from "../CGPABubble/CGPABubble";
 
 const AboutMe = () => {
 
@@ -119,15 +120,23 @@ const AboutMe = () => {
         <h2>🎓 Education Background</h2>
         <div className="about-edu">
           <div className="edu-item">
-            <h3>Tunku Abdul Rahman University of Management and Technology (TAR UMT)</h3>
-            <p className="edu-major">
-              Diploma in Information Technology
-            </p>
-            <p className="edu-year">2024/7 - Now</p>
-            <p className="edu-cgpa">CGPA: 3.4 / 4.0</p>
+            <HStack justify="between">
+              <VStack>
+                <h3><a href="https://tarc.edu.my/" target="_blank" className="black">Tunku Abdul Rahman University of Management and Technology (TAR UMT)</a></h3>
+                <p className="edu-major">
+                  <a href="https://focs.tarc.edu.my/programmes/diploma/diploma-in-information-technology-dft" target="_blank" className="black">
+                    Diploma in Information Technology
+                  </a>
+                </p>
+                <p className="edu-year">2024/7 - Now</p>
+              </VStack>
+
+              <CGPABubble value={3.4} max={4.0} size={140} />
+            </HStack>
+
 
             <p className="edu-desc">
-              Learning areas include <strong>web development, databases, operating systems, networking fundamentals</strong>, 
+              Learning areas include <strong>web development, databases, operating systems, networking fundamentals</strong>,
               and the <strong>software development lifecycle</strong>. Proficient in <strong>C#, React, and ASP.NET Core</strong>.
             </p>
 
@@ -173,37 +182,52 @@ const AboutMe = () => {
 
       {/* ===== Skills ===== */}
       <section className="about-section">
-        <h2>💼 技术技能</h2>
+        <h2>Skills</h2>
         <div className="about-skills">
           <div className="skill-group">
-            <h3>前端开发</h3>
+            <h3>Front-End</h3>
             <ul>
-              <li>React / Next.js</li>
-              <li>TypeScript / JavaScript / HTML / CSS</li>
-              <li>Tailwind / Sass / Responsive Design</li>
+              <li>React</li>
+              <li>TypeScript / JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
             </ul>
           </div>
           <div className="skill-group">
-            <h3>后端开发</h3>
+            <h3>Back-End</h3>
             <ul>
               <li>ASP.NET Core / C#</li>
-              <li>RESTful APIs / Entity Framework</li>
-              <li>SQL Server / MySQL</li>
+              <li>PHP</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>C++</li>
             </ul>
           </div>
           <div className="skill-group">
-            <h3>游戏与创作</h3>
+            <h3>Database</h3>
             <ul>
-              <li>Unity (C#)</li>
-              <li>Blender / Photoshop / Clip Studio Paint</li>
-              <li>音乐制作：FL Studio / Pianoteq / Ozone</li>
+              <li>SQL Server</li>
+              <li>Entity Framework</li>
+              <li>MySQL</li>
+              <li>PhpMyAdmin</li>
+              <li>Dbeaver</li>
             </ul>
           </div>
           <div className="skill-group">
-            <h3>工具与协作</h3>
+            <h3>Game Develop</h3>
             <ul>
-              <li>Git / GitHub / Vercel / VS Code</li>
-              <li>Notion / Figma / Obsidian</li>
+              <li>Unity / C#</li>
+              <li>Music: FL Studio</li>
+              <li>Pixel Art: Aseprite</li>
+            </ul>
+          </div>
+          <div className="skill-group">
+            <h3>Tools & Creative</h3>
+            <ul>
+              <li>Github / Vercel</li>
+              <li>VS Code / VS 2022 / IntelliJ</li>
+              <li>Figma</li>
+              <li>Obsidian</li>
             </ul>
           </div>
         </div>
@@ -211,39 +235,63 @@ const AboutMe = () => {
 
       {/* ===== Interests ===== */}
       <section className="about-section">
-        <h2>🎮 兴趣与创作方向</h2>
+        <h2>Interests and Direction</h2>
         <p>
-          我的兴趣涵盖游戏设计、剧情文案、音乐创作与视觉叙事。
-          我喜欢将艺术与逻辑结合，用编程语言呈现感性表达。
-          当前正在尝试结合 <strong>交互叙事游戏</strong> 与 <strong>原创配乐</strong> 的个人项目。
+          My interests are broad and mostly connected to <strong>creative expression</strong>, such as game design, storytelling, music composition, and visual narrative. Games, being a fusion of all these art forms, inspired me to pursue game development—a challenging yet deeply fulfilling path.
+          <br /><br />
+          Over time, as I learned programming, I realized that I genuinely enjoy it as well, since coding allows me to <strong>turn ideas into reality without limitations</strong>.
+          <br /><br />
+          Moving forward, I aim to keep improving my programming skills and technical stack, particularly in front-end and back-end development, to build a strong foundation for achieving my long-term dream.
         </p>
       </section>
 
       {/* ===== Personality ===== */}
       <section className="about-section">
-        <h2>💬 我的理念与性格</h2>
+        <h2>Philosophy and Character</h2>
         <p>
-          - 冷静思考、追求细节与逻辑的完美平衡
-          - 相信「温柔与理性并存」是创造力的源泉
-          - 工作中注重结构化与文档化，热爱学习与复盘
-          - 对设计、氛围、音乐都极为敏感，希望作品能打动人
+          I enjoy taking on <strong>challenging tasks</strong>. When facing difficulties, I tend to <strong>review the overall logic</strong>, identify areas for <strong>improvement</strong>, and, when necessary, <strong>redesign parts of the structure</strong> to enhance quality. I pay close attention to <strong>detail</strong> and often dedicate significant effort to refining small features, pursuing perfection as long as it does not hinder progress.
+          <br /><br />
+          When dealing with <strong>large or complex projects</strong>, I usually use <strong>mind maps</strong> to break them down into smaller, manageable modules and complete them step by step. In <strong>team collaborations</strong>, I often take on a <strong>technical support role</strong>, focusing on helping others solve problems rather than leading the group.
+          <br /><br />
+          I believe the future belongs to those who <strong>continue to learn</strong> and <strong>empathize with others</strong>.
         </p>
+
       </section>
 
       {/* ===== Contact ===== */}
       <section className="about-section contact">
-        <h2>📫 联系方式</h2>
+        <h2>Contact</h2>
         <div className="contact-links">
-          <a href="mailto:lohqisheng@example.com">Email</a>
-          <a href="https://github.com/yourgithub" target="_blank" rel="noreferrer">
+
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pandora.va7@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Email</a>
+
+          <a href="https://github.com/pandorava7"
+              target="_blank"
+              rel="noopener noreferrer">
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noreferrer">
-            LinkedIn
+
+          <a href="https://pandora-vanity.itch.io/"
+              target="_blank"
+              rel="noopener noreferrer">
+            Icth.io
           </a>
-          <a href="https://yourportfolio.vercel.app" target="_blank" rel="noreferrer">
-            Portfolio
+
+          <a href="https://www.youtube.com/@Sylunae-7"
+              target="_blank"
+              rel="noopener noreferrer">
+            Youtube
           </a>
+
+          <a href="https://space.bilibili.com/1754165806?spm_id_from=333.1007.0.0"
+              target="_blank"
+              rel="noopener noreferrer">
+            Bilibili
+          </a>
+
         </div>
       </section>
     </div>
