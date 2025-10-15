@@ -1,23 +1,38 @@
 [
   {
     "id": "p002",
-    "link": "",
+    "links": [
+      ""
+    ],
     "blocks": [
       {
         "type": "paragraph",
         "section": "overview",
-        "content": "本系统旨在协助求职者与雇主之间的招聘匹配，采用 ASP.NET Core MVC 架构。"
+        "content": "This is a job recruitment website that connects job seekers and employers. Job seekers can search and apply for jobs, employers can post and review applicants, and administrators manage and audit the entire system."
+      },
+      {
+        "type": "mediaSplit",
+        "section": "overview",
+        "side": "right",
+        "ratio": "1-1",
+        "image": "/assets/Website/Job Recruitment System/main.png",
+        "content": "I was responsible for most of the development work, including system design, code implementation, security validation, database management, UI design, and maintenance. Some modules were handled by other teammates. Due to tight deadlines, the project was submitted before completion, leaving room for improvement."
+      },
+      {
+        "type": "paragraph",
+        "section": "overview",
+        "content": "The overall system and UI design were inspired by JobStreet. The main interface supports job search and filtering. Clicking on a job card dynamically loads its detailed information on the right using AJAX. The design includes responsive layouts for mobile devices—when the screen size shrinks, the layout merges into a single column, and a specific AJAX logic is triggered to display job details efficiently."
       },
       {
         "type": "image",
         "section": "overview",
-        "src": "/assets/Website/Job Recruitment System/main.png",
-        "caption": "系统首页界面"
+        "src": "/assets/Website/Job Recruitment System/home.png",
+        "caption": "Main job search interface and responsive layout"
       },
       {
-        "type": "video",
-        "section": "overview",
-        "src": "/assets/Website/Job Recruitment System/output.mp4"
+        "type": "paragraph",
+        "section": "tech",
+        "content": "The project follows a classic ASP.NET Core MVC architecture. Each view retrieves data from the database, wraps it into a ViewModel, and passes it to the frontend view. This structure adheres to traditional MVC design logic."
       },
       {
         "type": "list",
@@ -26,53 +41,448 @@
           "ASP.NET Core MVC",
           "Entity Framework Core",
           "SQL Server",
-          "Bootstrap + Custom CSS"
+          "CSS",
+          "AJAX (for dynamic content loading)"
         ]
+      },
+      {
+        "type": "paragraph",
+        "section": "tech",
+        "content": "The Extension.cs file was used to simplify many repetitive internal implementations. This project is a single-site system designed purely for educational purposes and does not involve any cross-domain API requests."
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "我的贡献几乎涵盖了系统80%的部分，包括但不限于："
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "Security Module"
+      },
+      {
+        "type": "list",
+        "section": "contribution",
+        "items": [
+          "Implemented three-role authentication (Job Seeker, Employer, Administrator)",
+          "Integrated email-based password recovery and modification"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "Job Seeker Module"
+      },
+      {
+        "type": "list",
+        "section": "contribution",
+        "items": [
+          "Search and filter job listings, view detailed job information",
+          "AJAX-based notification system between job seekers and employers",
+          "Personal profile management",
+          "Dynamic input suggestion (real-time keyword matching)"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "Employer Module"
+      },
+      {
+        "type": "list",
+        "section": "contribution",
+        "items": [
+          "Job posting and draft management system",
+          "View job status, applicant information, and perform accept/reject actions",
+          "Company recruitment data analytics"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "Administrator Module"
+      },
+      {
+        "type": "list",
+        "section": "contribution",
+        "items": [
+          "User and job management system",
+          "Job post approval workflow",
+          "Audit system for tracking critical actions and timestamps",
+          "Data filtering, merging, and website statistics",
+          "Database seeding and maintenance scripts"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "UI & Frontend Interaction"
+      },
+      {
+        "type": "list",
+        "section": "contribution",
+        "items": [
+          "Responsive layout and animation design",
+          "Custom theme system and CSS visual enhancements"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": " \n"
       },
       {
         "type": "mediaSplit",
         "section": "contribution",
         "side": "left",
-        "image": "/assets/Website/Job Recruitment System/main.png",
-        "content": "我负责编写 Job Review 模块，包括审核状态流转与日志记录。"
+        "ratio": "2-1",
+        "image": "/assets/Website/Job Recruitment System/security.png",
+        "content": "Security implementation includes login validation for three roles: job seeker, employer, and administrator. Passwords are hashed upon login, and different roles have distinct permissions and access to specific pages. The administrator uses a separate login portal to view data, review posts, and manage the website."
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "Each form submission is protected using data annotations and ASP.NET's built-in validation mechanisms. ASP.NET’s `asp-for` and `asp-validation` provide automatic model and AJAX-based validation feedback. Backend actions perform additional verification, while `ValidateAntiForgeryToken` offers CSRF protection. Proper HTTP verbs (GET, POST, PUT, DELETE) are strictly enforced."
+      },
+      {
+        "type": "paragraph",
+        "section": "contribution",
+        "content": "SQL injection risks are mitigated through Entity Framework Core’s native query handling. Database validation annotations ensure input safety and consistency."
+      },
+      {
+        "type": "paragraph",
+        "section": "tech",
+        "content": "The database was implemented using SQL Server and Entity Framework Core. Each table includes multiple attributes validated with Data Annotations, and all foreign and primary key relationships align with business logic."
+      },
+      {
+        "type": "mediaSplit",
+        "section": "tech",
+        "side": "right",
+        "ratio": "1-2",
+        "image": "/assets/Website/Job Recruitment System/database.png",
+        "content": "During development, schema changes were frequent due to evolving requirements. EF Core’s migration feature efficiently handled synchronization between different team members’ databases. Sample data was generated using AI, and for large datasets, Mockaroo was suggested for better efficiency."
+      },
+      {
+        "type": "paragraph",
+        "section": "tech",
+        "content": "The UI focused on clean layout design and consistency. I spent about one-third of total development time on UI design. Although many elements were AI-generated, I made significant manual adjustments and became familiar with CSS reuse, nesting, and styling techniques."
+      },
+      {
+        "type": "mediaSplit",
+        "section": "tech",
+        "side": "right",
+        "ratio": "2-1",
+        "image": "/assets/Website/Job Recruitment System/ui_theme.png",
+        "content": "Each user role has a different theme color scheme but shares the same HTML structure. Theme differences are achieved using dedicated CSS classes."
+      },
+      {
+        "type": "paragraph",
+        "section": "challenges",
+        "content": "Throughout development, I faced numerous challenges but learned to resolve them quickly—especially with the help of AI-assisted debugging. Initially, my unfamiliarity with ASP.NET Core MVC, EF Core, and SQL Server caused many issues such as database connection failures and recursive relationships. Through debugging and experience, I gradually mastered problem-solving techniques."
       },
       {
         "type": "quote",
         "section": "challenges",
-        "content": "在多角色认证下维护统一登录逻辑是系统设计中的关键难点。"
+        "content": "“There is no unsolvable bug; every error has its reason. Debugging is a path to understanding.”"
+      },
+      {
+        "type": "paragraph",
+        "section": "challenges",
+        "content": "While AI greatly accelerates development, I realized it also created a dependency—I often focused on using AI to generate functional code rather than deeply understanding it. Although I can read and modify AI-generated code, I still lack the ability to independently write a complete project without assistance. Building this capability requires continuous practice and deeper understanding of syntax and architecture."
       }
     ]
   },
   {
-    "id": "p011",
-    "link": "https://youtu.be/UYIeOTV3z4E?si=wMyqzbl91h9j-uD0",
+    "id": "p005",
+    "links": [
+      "https://www.bilibili.com/video/BV1C1FUeiEHF",
+      "https://www.bilibili.com/video/BV1Am411z71z",
+      "https://www.bilibili.com/video/BV1Wm421V718"
+    ],
     "blocks": [
       {
         "section": "overview",
-        "type": "mediaSplit",
-        "side": "left",
-        "image": "/asset/Music/Vernal Reverie/main.png",
-        "caption": "作品封面",
-        "content": "这首曲子灵感来自春天的梦境……"
+        "type": "paragraph",
+        "content": "This is a 2D platformer game independently developed by myself. The gameplay features puzzle-solving, combat, character progression, and story elements. The visual style adopts a minimalist geometric aesthetic, which made the art development relatively easy and allowed me to focus more on programming and system design."
+      },
+      {
+        "section": "overview",
+        "type": "paragraph",
+        "content": "The game’s predecessor was Chaos of Tuyuan, which had a unique and abstract worldview. I found the idea of portraying the world through geometric forms fascinating—it transforms everything into pure shapes, allowing players to focus on the narrative and gameplay interactions."
+      },
+      {
+        "section": "overview",
+        "type": "paragraph",
+        "content": "My goal was to create a vibrant and deeply layered world where the toy-like protagonist explores the truth behind it. After evaluation, I believe the game has significant potential; if completed with a high level of polish and released on Steam, it could attract considerable attention, as there are currently no games with a similar artistic style. However, I entered university during the early development phase, and my available time for game development decreased drastically. Therefore, I decided to pause the project and focus on my studies for now."
+      },
+      {
+        "section": "overview",
+        "type": "paragraph",
+        "content": "I still hope to see this game released one day in the future."
       },
       {
         "section": "tech",
         "type": "list",
         "items": [
-          "FL Studio",
-          "Pianoteq 8",
-          "Ozone 11"
+          "Unity(C#)",
+          "Aseprite",
+          "Adobe illustrator"
         ]
       },
       {
         "section": "contribution",
         "type": "paragraph",
-        "content": "独立完成作曲、编曲、混音与母带。"
+        "content": "Detail Optimization:"
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Implemented dynamic camera shake that responds to the intensity and distance of impacts (e.g., explosions or bullet collisions)."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Designed a system where bullets can collide with each other, calculating damage and destroying one another accordingly."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Built a highly customized movement system supporting features like input buffering, coyote jumping, directional dashing, smooth motion curves, landing buffers, directional indicators, dash effect UI, wall sliding, and particle effects for dashing and movement."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Developed a combat system centered around weapon switching. Players can choose from up to three weapons, covering classic RPG archetypes such as support, healing, spread, direct hit, and summoning types."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Added a three-character switch system, where each character has unique abilities used for exploration and puzzle-solving, enhancing the overall gameplay depth."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "System Design:"
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Implemented a global Event Manager to handle in-game events."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Built a Data Manager for saving and loading game states."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Designed a modular Key Manager that allows flexible remapping of controls without affecting gameplay modules."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Utilized ScriptableObjects to store and customize data for characters, skills, and enemies. (In hindsight, JSON could offer greater flexibility and performance for data handling.)"
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Code Structure:"
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "All entities implement proper inheritance and interfaces. For example, both players and enemies derive from a base Entity class with core status attributes and share an IDamageable interface, distinguishing living entities from inanimate ones."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "For enemy AI, I used a Finite State Machine (FSM) to manage behavior patterns, enabling dynamic decision-making and basic adaptive AI behavior."
+      },
+      {
+        "section": "challenges",
+        "type": "paragraph",
+        "content": "Game design is an arduous process requiring creativity, technical insight, and constant iteration. Many systems had to be designed from scratch, often involving conflicts between gameplay design and technical feasibility. Balancing fun and implementation became the central challenge."
+      },
+      {
+        "section": "challenges",
+        "type": "paragraph",
+        "content": "Due to my high standards for detail, I spent a significant amount of time studying how to deliver realistic feedback—such as bullet impact particles, recoil simulation, camera offset, and shake decay effects."
+      },
+      {
+        "section": "challenges",
+        "type": "paragraph",
+        "content": "The player’s movement system was also heavily refined, featuring pre-input detection, coyote jumping, variable jump height, dashing responsiveness, and dynamic camera adjustments during falling."
+      },
+      {
+        "section": "challenges",
+        "type": "paragraph",
+        "content": "Lastly, the UI was crafted to match the geometric visual theme, maintaining a clean and elegant aesthetic. Despite multiple layers of nested UI, I implemented a hotkey-based navigation system that allows players to backtrack through interfaces, managed by a global UI controller."
+      }
+    ]
+  },
+  {
+    "id": "p006",
+    "links": [
+      "https://www.bilibili.com/video/BV1eFGZeGEyo"
+    ],
+    "blocks": [
+      {
+        "section": "overview",
+        "type": "mediaSplit",
+        "side": "left",
+        "ratio": "1-2",
+        "image": "/assets/Unity/Inventory System/main.png",
+        "caption": "Cover",
+        "content": "This is a highly complete item drag-and-drop logic plugin, featuring rich functionality that covers nearly all inventory interactions found in sandbox-style games."
+      },
+      {
+        "section": "tech",
+        "type": "list",
+        "items": [
+          "KineMaster"
+        ]
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Full Feature Overview:"
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "1. Left-click and release an item to start dragging it."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "2. While dragging, you can interact with inventory slots (place directly / swap items / stack items / stack to max while keeping the remaining stack in drag state)."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "3. Right-click an item to split it in half and drag the divided stack."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "4. While dragging, hold Left Click and hover across inventory slots to evenly distribute items."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "5. While dragging, hold Right Click to place one item per slot."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "6. Drop items from the inventory."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "7. Left Shift + Left Click moves an item quickly between inventories (e.g., chest, backpack, hotbar, etc.)."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "8. While dragging an item, Left Shift + Double Click on another item quickly transfers all items of the same type to the other inventory."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "9. When hovering over an item, pressing a number key moves it to the corresponding hotbar slot."
+      }
+    ]
+  },
+  {
+    "id": "p010",
+    "links": [
+      "https://www.bilibili.com/video/BV143411K74s"
+    ],
+    "blocks": [
+      {
+        "section": "overview",
+        "type": "mediaSplit",
+        "side": "right",
+        "image": "/assets/VideoClip/AMV/main.png",
+        "caption": "Cover",
+        "content": "The production took nearly a week of intensive work. I gathered and recorded materials from game CGs, official MVs, and promotional videos, then combined them with music and edited everything together. A great AMV not only tests one’s editing skills but also reflects the creator’s passion. This AMV is one of the media works I’m most proud of from my high school years — it holds deep sentimental value for me."
+      },
+      {
+        "section": "tech",
+        "type": "list",
+        "items": [
+          "KineMaster"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p011",
+    "links": [
+      "https://youtu.be/UYIeOTV3z4E?si=wMyqzbl91h9j-uD0"
+    ],
+    "blocks": [
+      {
+        "section": "overview",
+        "type": "mediaSplit",
+        "side": "left",
+        "image": "/assets/Music/Vernal Reverie/main.png",
+        "caption": "Cover",
+        "content": "The piece is inspired by the main theme of the visual novel “Harmonia’s Horn — The Town Where the Unbelievable Dwells.” Its melody is profoundly lyrical, and I built a piano arrangement on top of it—reshaping the harmony and timbre and introducing a flute to deepen the overall texture.\n\nTeamwork & Self-Assessment: As my first arrangement project, I would rate it 9/10. The shortcoming lay in collaboration: driven by a focus on cohesion and finish, I did not integrate a teammate’s arrangement, so the final work didn’t fully reflect three-person teamwork. This experience taught me the importance of communication, integration, and compromise."
+      },
+      {
+        "section": "overview",
+        "type": "paragraph",
+        "content": "Production Timeline: Not precisely tracked—about one week of focused writing, followed by intermittent revisions and polish.\n\nTakeaway: Initiated as an extracurricular assignment, this project laid solid groundwork for my future music creation. It helped me internalize basic music theory, harmonic writing, and aesthetic judgment—an essential step toward my long-term goals."
+      },
+      {
+        "section": "tech",
+        "type": "list",
+        "items": [
+          "MuseScore Studio 4"
+        ]
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Day 1: Recreated the core theme and drafted initial harmonies; completed the prelude and first section."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Day 2: After positive listener feedback, completed the latter half and an initial ending."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Day 3: Refined the main harmony and explored an extended version, reaching about 2:00."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Day 4: Composed a new melodic idea, but it clashed with the theme’s character and was hard to realize convincingly on piano; multiple harmony passes led to a creative bottleneck."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Day 5: Finished the new section, bringing the length to roughly 4:00; listeners had no negative feedback, but I still felt it didn’t blend with the main theme."
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "Day 6: Removed the new section entirely; added a flute entrance and transition after the theme, drove the piece to its climax, then closed by returning to the opening melody. "
+      },
+      {
+        "section": "contribution",
+        "type": "paragraph",
+        "content": "After Day 7: Ongoing fine-tuning and detail work."
       },
       {
         "section": "challenges",
         "type": "quote",
-        "content": "主要难点在于如何让钢琴音色动态自然且富有呼吸感。"
+        "content": "The central challenge was designing left-hand harmony that felt rich and musical. I invested substantial time in iterative trials to balance theory with ear-led judgment, gradually arriving at harmony progressions that best complemented the theme."
       }
     ]
   }

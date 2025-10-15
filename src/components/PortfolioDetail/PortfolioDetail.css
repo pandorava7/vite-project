@@ -19,7 +19,6 @@
 }
 
 .pd-header .pd-desc {
-  font-size: 1.1rem;
   color: #333;
   margin-bottom: 20px;
     white-space: pre-line;
@@ -93,7 +92,6 @@
 
 /* ===== Block Types ===== */
 .pd-paragraph {
-  font-size: 1.05rem;
   color: #333;
   text-align: justify;
 }

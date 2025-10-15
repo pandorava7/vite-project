@@ -4,6 +4,7 @@ import "./Portfolio.css";
 import data from '../../data/portfolio.json'
 import { useNavigate } from "react-router-dom";
 import { VStack } from "../Stack/Stack";
+import VideoCarousel from "../VideoCarousel/VideoCarousel";
 
 
 interface CardItem {
@@ -116,48 +117,10 @@ const Portfolio = () => {
                                     {/* 左边主要展示区 */}
                                     <div className="main-card">
                                         <div className="video">
-                                            {/* 左按钮 */}
-                                            {currentCard.video && currentCard.video.length > 1 && (
-                                                <button
-                                                    className="video-nav left"
-                                                    onClick={() =>
-                                                        setVideoIndex((prev) =>
-                                                            prev > 0 ? prev - 1 : currentCard.video!.length - 1
-                                                        )
-                                                    }
-                                                >
-                                                    ⇦
-                                                </button>
-                                            )}
-
-                                            {/* 视频滑动区 */}
-                                            <div
-                                                className="video-track"
-                                                style={{ transform: `translateX(-${videoIndex * 100}%)` }}
-                                            >
-                                                {currentCard.video?.map((src, idx) => (
-                                                    <div className="video-slide" key={idx}>
-                                                        <video src={src} autoPlay muted playsInline loop
-                                                            onClick={() =>
-                                                                portfolioInfo(currentCard.id)
-                                                            } />
-                                                    </div>
-                                                ))}
-                                            </div>
-
-                                            {/* 右按钮 */}
-                                            {currentCard.video && currentCard.video.length > 1 && (
-                                                <button
-                                                    className="video-nav right"
-                                                    onClick={() =>
-                                                        setVideoIndex((prev) =>
-                                                            prev < currentCard.video!.length - 1 ? prev + 1 : 0
-                                                        )
-                                                    }
-                                                >
-                                                    ⇨
-                                                </button>
-                                            )}
+                                            <VideoCarousel
+                                                videoList={currentCard.video || []}
+                                                onVideoClick={() => portfolioInfo(currentCard.id)}
+                                            />
                                         </div>
 
                                         <div className="description-card">

@@ -1,0 +1,54 @@
+.video-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.video-slide {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+.video-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+/* 左右切换按钮 */
+.video-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 28px;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.video-nav.left {
+    left: 10px;
+}
+
+.video-nav.right {
+    right: 10px;
+}
+
+.video-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+}

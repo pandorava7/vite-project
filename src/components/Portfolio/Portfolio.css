@@ -99,55 +99,7 @@
   direction: ltr;
 }
 
-/* main-card 里的视频容器：横向排列 */
-.main-card .video {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    /* 防止溢出 */
-}
 
-/* 包裹所有 video 的滑动区 */
-.video-track {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
-    /* 宽度由子元素撑开 */
-}
-
-/* 每个视频占满容器 */
-.video-slide {
-    min-width: 100%;
-    /* 关键：一屏一个视频 */
-    flex-shrink: 0;
-}
-
-/* 左右切换按钮 */
-.video-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 28px;
-    padding: 5px 12px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.video-nav.left {
-    left: 10px;
-}
-
-.video-nav.right {
-    right: 10px;
-}
-
-.video-nav:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
 
 /* 右边侧边列表 */
 .side-list {

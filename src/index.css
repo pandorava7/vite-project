@@ -126,9 +126,14 @@ body {
 }
 
 h1, h2 {
-  color: #de4a9b;
+  color: #b52574;
 }
 
 p{
+  font-size: 1.2rem;
+  white-space: pre-line;
+}
+
+blockquote{
   font-size: 1.2rem;
 }

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import data from "../../data/portfolio.json";
 import detailData from "../../data/portfolio_info.json";
 import "./PortfolioDetail.css";
+import VideoCarousel from "../VideoCarousel/VideoCarousel";
 
 const PortfolioDetail = () => {
     const { id } = useParams();
@@ -18,17 +19,17 @@ const PortfolioDetail = () => {
         video?: string[];
         png?: string;
         description?: string;
-        link?: string;
+        links?: string[];
         blocks?: any[];
     } = { ...projectBase, ...projectDetail };
 
     if (!projectFull) return <p>项目不存在或数据未加载。</p>;
 
     const sectionTitleMap: Record<string, string> = {
-        overview: "背景介绍",
-        tech: "技术栈",
-        contribution: "我的贡献",
-        challenges: "技术难题",
+        overview: "Background Introduction",
+        tech: "Tech",
+        contribution: "Contribution",
+        challenges: "Challenges",
     };
 
     const renderBlock = (block: any, idx: number) => {
@@ -60,12 +61,22 @@ const PortfolioDetail = () => {
                     </ul>
                 );
 
-            case "mediaSplit":
+            case "mediaSplit": {
+                // 从 JSON 读取比例字段，如 "2-1" 或 "1-2"
+                const [col1, col2] = (block.ratio || "1-2").split("-").map(Number);
+
+                // 根据左右决定谁先显示
+                const isRight = block.side === "right";
+
+                // inline style 动态控制 grid
+                const gridStyle = {
+                    display: "grid",
+                    gridTemplateColumns: isRight ? `${col2}fr ${col1}fr` : `${col1}fr ${col2}fr`,
+                    gap: "24px",
+                };
+
                 return (
-                    <div
-                        key={idx}
-                        className={`pd-media-split ${block.side === "right" ? "right" : "left"}`}
-                    >
+                    <div key={idx} className={`pd-media-split ${isRight ? "right" : "left"}`} style={gridStyle}>
                         <div className="pd-media">
                             <img src={block.image} alt={block.caption || ""} />
                             {block.caption && <figcaption>{block.caption}</figcaption>}
@@ -75,6 +86,7 @@ const PortfolioDetail = () => {
                         </div>
                     </div>
                 );
+            }
 
             case "quote":
                 return (
@@ -99,15 +111,22 @@ const PortfolioDetail = () => {
           <img className="pd-cover" src={projectFull.png} alt={projectFull.title} />
         )} */}
                 {projectFull.video && projectFull.video.length > 0 && (
-                    <video
-                        className="pd-top-video"
-                        src={projectFull.video[0]}
-                        controls
-                        loop
-                        muted
-                    />
+
+                    <div className="video">
+                        <VideoCarousel
+                            videoList={projectFull.video || []}
+                            controls={true}
+                        />
+                    </div>
                 )}
-                {projectFull.link && <p className="pd-link">Link: <a href={projectFull.link} target="_blank">{projectFull.link}</a></p>}
+
+                {projectFull.links && projectFull.links.length > 0 && (
+                    projectFull.links.map((src, idx) => (
+                        <p key={idx} className="pd-link">
+                            Link: <a href={src} target="_blank" rel="noopener noreferrer">{src}</a>
+                        </p>
+                    ))
+                )}
             </header>
 
             {sections.map((sec) => {
