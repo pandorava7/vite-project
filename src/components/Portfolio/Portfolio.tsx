@@ -31,8 +31,6 @@ const Portfolio = () => {
         }));
     };
 
-    const [videoIndex, setVideoIndex] = useState(0);
-
     // 控制展开/折叠
     const initialExpanded: Record<string, boolean> = {};
     data.forEach((list) => {
@@ -144,7 +142,6 @@ const Portfolio = () => {
                                                 className={`side-card ${currentCard.title === item.title ? "active" : ""}`}
                                                 onClick={() => {
                                                     handleSelect(list.category, item);
-                                                    setVideoIndex(0);
                                                 }}
                                             >
                                                 <div className="video">
