@@ -7,15 +7,7 @@ const Resume = () => {
     {
       name: "Resume (English).pdf",
       path: "/resumes/Resume_English.pdf",
-    },
-    {
-      name: "履历表（中文）.pdf",
-      path: "/resumes/Resume_Chinese.pdf",
-    },
-    {
-      name: "Game Developer Resume.pdf",
-      path: "/resumes/GameDev_Resume.pdf",
-    },
+    }
   ];
 
   return (
