@@ -20,7 +20,7 @@ const App: React.FC = () => {
   //   }
   // }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     // 仅第一次进入网站时执行
     if (!window.location.hash) {
       window.location.hash = "#portfolio";
@@ -31,6 +31,9 @@ const App: React.FC = () => {
     <div className="app">
       {/* NavBar */}
       <Navbar />
+
+
+      <h1 style={{marginTop:"100px"}}>This website is developed using React</h1>
 
       {/* 内容区域 */}
       <main className="main">
@@ -51,7 +54,7 @@ const App: React.FC = () => {
               </>
             } />
 
-            <Route path="portfolio/:id" element={<PortfolioDetail />} />
+          <Route path="portfolio/:id" element={<PortfolioDetail />} />
         </Routes>
 
       </main>

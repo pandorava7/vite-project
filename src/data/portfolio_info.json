@@ -14,6 +14,14 @@
         "ratio": "1-1",
         "image": "/assets/Website/React + Web API CRUD/code.png",
         "content": "The project follows a front-end and back-end separation architecture — the back end provides API endpoints such as GET, POST, PUT, and DELETE, while the front end consumes these APIs to retrieve and display data."
+      },
+      {
+        "type": "mediaSplit",
+        "side": "left",
+        "ratio": "1-1",
+        "section": "overview",
+        "image": "/assets/Website/React + Web API CRUD/fetch.png",
+        "content": "Fetching data from the Web API and displaying it on the React front end"
       }
     ]
   },
