@@ -21,9 +21,6 @@ body {
   font-weight: 400;
   font-style: normal;
 
-  background-image:
-    linear-gradient(180deg, rgba(240, 252, 253, 0.8) 0%, rgba(96, 195, 243, 0.8) 37%, rgba(228, 119, 167, 0.8) 100%),
-    url('/images/background1.jpg');
 
   background-repeat: no-repeat;
   /* 不重复 */
@@ -132,6 +129,7 @@ h1, h2 {
 p{
   font-size: 1.2rem;
   white-space: pre-line;
+  font-weight: bold;
 }
 
 blockquote{

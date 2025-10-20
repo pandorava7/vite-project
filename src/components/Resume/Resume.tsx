@@ -30,14 +30,14 @@ const Resume = () => {
                 rel="noreferrer"
                 className="btn view"
               >
-                查看
+                View
               </a>
               <a
                 href={file.path}
                 download
                 className="btn download"
               >
-                下载
+                Download
               </a>
             </div>
           </div>

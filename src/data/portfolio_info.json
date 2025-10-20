@@ -1,9 +1,24 @@
 [
   {
+    "id": "p001",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "section": "overview",
+        "content": "This is a CRUD showcase website built with React and ASP.NET Core Web API."
+      },
+      {
+        "type": "mediaSplit",
+        "section": "overview",
+        "side": "right",
+        "ratio": "1-1",
+        "image": "/assets/Website/React + Web API CRUD/code.png",
+        "content": "The project follows a front-end and back-end separation architecture — the back end provides API endpoints such as GET, POST, PUT, and DELETE, while the front end consumes these APIs to retrieve and display data."
+      }
+    ]
+  },
+  {
     "id": "p002",
-    "links": [
-      ""
-    ],
     "blocks": [
       {
         "type": "paragraph",

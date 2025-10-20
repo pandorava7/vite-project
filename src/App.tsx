@@ -48,7 +48,6 @@ const App: React.FC = () => {
                 <section id="resume">
                   <Resume />
                 </section>
-                <section id="other">…</section>
               </>
             } />
 

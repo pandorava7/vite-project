@@ -1,7 +1,7 @@
 .about-container {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 0px 20px;
   font-family: "Segoe UI", "PingFang SC", sans-serif;
   color: #222;
   line-height: 1.8;
@@ -84,17 +84,6 @@
 .contact-icons .icon.bilibili:hover {
   background: #e8f6ff;
   color: #00a1d6;
-}
-
-/* 深色模式适配（如无暗色可忽略） */
-@media (prefers-color-scheme: dark) {
-  .contact-icons .icon {
-    --bg: rgba(255, 255, 255, 0.08);
-    --fg: #f1f1f1;
-    --ring: rgba(0, 0, 0, 0.3);
-  }
-
-  /* .contact-icons .icon.github:hover { background: rgba(255,255,255,0.16); color: #fff; } */
 }
 
 /* 减少动画偏好支持 */
@@ -320,7 +309,6 @@
 /* ===== Contact Section ===== */
 .about-section.contact {
   text-align: left;
-  padding: 60px 0;
   color: var(--text-color, #222);
 }
 
