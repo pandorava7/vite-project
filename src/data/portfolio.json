@@ -4,11 +4,11 @@
         "items": [
             {
                 "id": "p001",
-                "title": "React + Web API CRUD",
+                "title": "React Web API CRUD",
                 "video": [
-                    "/assets/Website/React + Web API CRUD/output.mp4"
+                    "/assets/Website/React Web API CRUD/output.mp4"
                 ],
-                "png": "/assets/Website/React + Web API CRUD/main.png",
+                "png": "/assets/Website/React Web API CRUD/main.png",
                 "description": "A sample website based on React and ASP.NET for data CRUD"
             },
             {
