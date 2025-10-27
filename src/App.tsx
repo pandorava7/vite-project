@@ -5,7 +5,6 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import PortfolioDetail from "./components/PortfolioDetail/PortfolioDetail";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Resume from "./components/Resume/Resume";
-import { useEffect } from "react";
 
 const App: React.FC = () => {
 
