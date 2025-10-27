@@ -4,7 +4,6 @@
 .portfolio {
     display: flex;
     flex-direction: column;
-    gap: 40px;
     padding: 20px;
 }
 
@@ -13,7 +12,6 @@
     flex-direction: column;
     gap: 20px;
 
-    border: 2px dashed #999;
     /* ✅ 灰色虚线边框 */
     border-radius: 12px;
     /* 可选：圆角 */
@@ -21,6 +19,8 @@
     /* 可选：内边距，避免内容贴边 */
 
     height:830px;
+    width: 100%;
+    margin: 0 auto;
 
     transition: all 0.2s ease;
     overflow: hidden;
@@ -80,8 +80,8 @@
 
 .main-card .description-card {
   max-height: 180px;
-  overflow-y: auto;
-  padding: 0px 30px;
+  overflow-y: scroll; /* 永远显示垂直滚动条 */
+  padding: 0px 20px;
 
   direction: rtl;       /* 👈 改变滚动条方向 */
   text-align: left;     /* 👈 把文字重新对齐回左侧 */
@@ -108,9 +108,7 @@
     gap: 10px;
     height: 730px;
     overflow-y: auto;
-    background-color: rgba(195, 139, 187, 0.5);
     border-radius: 15px;
-    border: 2px black dashed;
     -webkit-overflow-scrolling: touch;
     /* iOS 惯性滚动 */
 }

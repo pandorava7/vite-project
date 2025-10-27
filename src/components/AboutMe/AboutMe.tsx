@@ -4,6 +4,7 @@ import "./AboutMe.css";
 import { FaGithub, FaYoutube, FaEnvelope } from "react-icons/fa";
 import { SiItchdotio, SiBilibili } from "react-icons/si";
 import CGPABubble from "../CGPABubble/CGPABubble";
+import SkillRadarChart from "../Radar/SkillRadarChart";
 
 const AboutMe = () => {
 
@@ -115,6 +116,8 @@ const AboutMe = () => {
         </div>
       </header>
 
+      <SkillRadarChart />
+
       {/* ===== Education ===== */}
       <section className="about-section">
         <h2>🎓 Education Background</h2>
@@ -128,7 +131,7 @@ const AboutMe = () => {
                     Diploma in Information Technology
                   </a>
                 </p>
-                <p className="edu-year">2024/7 - Now</p>
+                <p className="edu-year">2024/7 - 2026/7</p>
               </VStack>
 
               <CGPABubble value={3.4} max={4.0} size={140} />
@@ -187,16 +190,16 @@ const AboutMe = () => {
           <div className="skill-group">
             <h3>Front-End</h3>
             <ul>
-              <li>React</li>
-              <li>TypeScript / JavaScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
+              <li>React⭐</li>
+              <li>TypeScript / JavaScript⭐</li>
+              <li>HTML5⭐</li>
+              <li>CSS3⭐</li>
             </ul>
           </div>
           <div className="skill-group">
             <h3>Back-End</h3>
             <ul>
-              <li>ASP.NET Core / C#</li>
+              <li>ASP.NET Core / C#⭐</li>
               <li>PHP</li>
               <li>Python</li>
               <li>Java</li>
@@ -207,7 +210,7 @@ const AboutMe = () => {
             <h3>Database</h3>
             <ul>
               <li>SQL Server</li>
-              <li>Entity Framework</li>
+              <li>Entity Framewor⭐</li>
               <li>MySQL</li>
               <li>PhpMyAdmin</li>
               <li>Dbeaver</li>
@@ -216,9 +219,9 @@ const AboutMe = () => {
           <div className="skill-group">
             <h3>Game Develop</h3>
             <ul>
-              <li>Unity / C#</li>
+              <li>Unity / C#⭐</li>
               <li>Music: FL Studio</li>
-              <li>Pixel Art: Aseprite</li>
+              <li>Pixel Art: Aseprite⭐</li>
             </ul>
           </div>
           <div className="skill-group">

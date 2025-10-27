@@ -20,12 +20,25 @@ const App: React.FC = () => {
   //   }
   // }, []);
 
-  useEffect(() => {
-    // 仅第一次进入网站时执行
-    if (!window.location.hash) {
-      window.location.hash = "#portfolio";
+  // useEffect(() => {
+  //   // 仅第一次进入网站时执行
+  //   if (!window.location.hash) {
+  //     window.location.hash = "#portfolio";
+  //   }
+  // }, []);
+
+  // 在 React 组件挂载后执行（例如在 App.jsx 或 useEffect 中）
+useEffect(() => {
+  if (window.location.hash) {
+    const id = window.location.hash.substring(1);
+    const el = document.getElementById(id);
+    if (el) {
+      const yOffset = -60; // 导航栏高度
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "auto" }); // 不需要平滑滚动
     }
-  }, []);
+  }
+}, []);
 
   return (
     <div className="app">

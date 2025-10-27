@@ -104,7 +104,7 @@ const Portfolio = () => {
                         {
                             !isExpanded && (
                                 <div className="collapse-message">
-                                    <p>↑ Only click if you are interested</p>
+                                    <p>↑ Click if interested</p>
                                 </div>
                             )
                         }
